@@ -1,0 +1,74 @@
+:root {
+    --bordercolor: rgb(77, 77, 77);
+    --background: rgb(255, 255, 255);
+    --textcolor: black;
+    --overlaycolor: rgba(0, 0, 0, .75);
+}
+
+.modal-background-overlay {
+    position: fixed;
+    z-index: 8;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--overlaycolor);
+    pointer-events: all; // så man ikke kan klikke på noget bag overlay
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    .modal {
+        position: fixed;
+        z-index: 10;
+        height: 90%;
+        max-width: 70%;
+        width: 70%;
+        padding: 10px 15px;
+        border: 1px solid var(--bordercolor);
+        border-radius: 5px;
+        background-color: var(--background);
+        color: var(--textcolor);
+        overflow-y: auto;
+        text-align: left;
+
+        .topContentFlex{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: row-reverse;
+            padding: 0% 1%;
+
+            .title {
+                font-size: 1.5rem;
+                font-weight: bold;
+            }
+            .close {
+                background: none;
+                font-weight: bold;
+                text-align: right;
+                
+                button{    
+                cursor: pointer;
+                background-color: transparent;
+                border: none;
+                font-size: 2rem;
+                }
+            }
+        }
+
+       .modalContent{
+        margin: 4% 1%;
+       }
+
+
+        .content {
+            padding: 10px 0;
+        }
+
+
+    }
+
+  
+}

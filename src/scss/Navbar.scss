@@ -1,0 +1,269 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 0% 5%;
+  background-color: rgb(129, 129, 129);
+  color: #fff;
+
+
+  // BURGER-TOGGLE-BUTTON
+
+  .toggleButton {
+    display: none; // Vises med flex i media!!!
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 32px;
+    height: 26px;
+    cursor: pointer;
+
+    .bar {
+      height: 4px;
+      width: 100%;
+      background-color: rgb(255, 255, 255);
+      border-radius: 10px;
+      transform-origin: left;
+
+      transition: all 1s ease;
+
+      // Lax x ved klik
+    }
+
+    &.changeAnimation .bar1 {
+      transform: rotate(45deg);
+    }
+
+    &.changeAnimation .bar2 {
+      opacity: 0;
+    }
+
+    &.changeAnimation .bar3 {
+      transform: rotate(-45deg);
+    }
+
+  }
+
+  // BRAND
+  .navbar-brand {
+    font-size: 1.5rem;
+    margin: 1rem;
+    color: #fff;
+    text-decoration: none;
+
+  }
+
+  // MENUEN
+
+  .navbarLinks {
+
+    display: flex;
+    align-items: center;
+
+    ul {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      li {
+        list-style-type: none;
+        transition: padding 1s ease;
+
+        &:hover {
+          background-color: rgba(0, 0, 0, .5);
+        }
+      }
+
+      a {
+        display: block;
+        text-decoration: none;
+        color: #fff;
+        padding: 2rem;
+      }
+    }
+
+    form {
+      display: flex;
+      gap: 10px;
+
+      input {
+        border: none;
+        padding: 2% 2%;
+        border-radius: 3px;
+      }
+
+      button {
+        padding: 2% 2%;
+        border: none;
+        border-radius: 3px;
+        width: 70px;
+        background-color: transparent;
+        border: 2px solid #fff;
+        color: #fff;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+
+  }
+
+}
+
+
+// BURGERMENU - RESPONSIVE TABLET
+
+@media (max-width: 800px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    // vis bugermenu
+    .toggleButton {
+      display: flex;
+      align-items: flex-start;
+    }
+
+    // menuen (div rund om ul)
+    .navbarLinks {
+      height: 0;
+      width: 100%;
+      overflow: hidden;
+      transition: height 1s ease-out;
+      flex-direction: column;
+
+      &.active {
+        height: 280px;
+      }
+
+      ul {
+        width: 100%;
+        flex-direction: column;
+
+        li {
+          text-align: center;
+
+          &:hover {
+            padding-left: 1.3rem;
+          }
+
+
+          a {
+            padding: 0.5rem 1rem;
+          }
+        }
+      }
+
+
+    
+
+    form {
+      justify-content: center;
+      padding-top: 10%;
+
+      input {
+        border: none;
+        padding: 2% 2%;
+        border-radius: 3px;
+      }
+
+      button {
+        padding: 2% 2%;
+        border: none;
+        border-radius: 3px;
+        width: 70px;
+        background-color: transparent;
+        border: 2px solid #fff;
+        color: #fff;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  }
+}
+
+
+
+// BURGERMENU - RESPONSIVE MOBIL
+
+@media (max-width: 800px) {
+
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    // vis bugermenu
+    .toggleButton {
+      display: flex;
+      align-items: flex-start;
+    }
+
+    // menuen (div rund om ul)
+    .navbarLinks {
+      height: 0;
+      width: 100%;
+      overflow: hidden;
+      transition: height 1s ease-out;
+
+      &.active {
+        height: 280px;
+      }
+
+      ul {
+        width: 100%;
+        flex-direction: column;
+
+        li {
+          text-align: center;
+
+          &:hover {
+            padding-left: 1.3rem;
+          }
+
+
+          a {
+            padding: 0.5rem 1rem;
+          }
+        }
+      }
+
+
+    }
+
+    form {
+      justify-content: center;
+      padding-top: 5.5%;
+
+      input {
+        border: none;
+        padding: 1% 1%;
+        border-radius: 3px;
+      }
+
+      button {
+        padding: 1% 2%;
+        border: none;
+        border-radius: 3px;
+        width: 70px;
+        background-color: transparent;
+        border: 2px solid #fff;
+        color: #fff;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+
+  }
+}
