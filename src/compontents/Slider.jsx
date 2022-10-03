@@ -15,14 +15,13 @@ const Slider = (props) => {
 
 
     // Image array (liste af billeder fra parent)
-    const sliderImages = props.tourGallery                      /* [ "f1_ (1).jpg", "f1_ (2).jpg", "f1_ (3).jpg" ] */
+    const sliderImages = props.heroGallery
 
-    // Caption tekts fra parent
-    const captionText = props.captionText
-
-    // Timeout variabel - så timeout kan clear'es i useEffecf
+    // Timeout variabel - så timeout kan clear'es i useEffect
 
     let t;
+
+
 
     useEffect(() => {
 
@@ -97,8 +96,7 @@ const Slider = (props) => {
                 {
                     sliderImages.map((sliderImgs, i) =>
                         <div className="mySlides slidefade" key={sliderImgs}>
-                            <img src={"http://localhost:5099/images/tours/" + sliderImgs} />
-                            <h3 className="text">{ " Foto " + (i +1) +  " fra " + captionText }</h3>
+                            <img src={"http://localhost:4444/images/banner/" + sliderImgs} />
                         </div>
                     )
                 }

@@ -197,22 +197,41 @@ export const getFooter = () => {
 };
 
 
-
-
-// -------------- BANNER ------------
+// -------------- NEWSSUBSCRIPTION ------------
 
 
 
-// GET FOOTER
-export const getBanner = () => {
-  // GET http://localhost:4444/banner
+// POST - tilmeld nyhedsbrev
+export const subscribeNews = ( subscriptionData ) => {
+  // GET http://localhost:4444/newssubscription/admin (medsend email og name)
 
-  // Her definere vi et endpoint, som i dette tilfælde er "tours"
+  console.log( "sub", subscriptionData );
 
-  let response = axiosBase.get("banner")
+  let response = axiosBase.post( "newssubscription", subscriptionData)
     .then((resp) => { return resp.data; })
-    .catch((error) => { throw new Error("Desværre, der er sket en fejl"); });
+    .catch((error) => { throw new Error( "Desværre, der er sket en fejl" ); });
   // Vi thrower en ny Error så den kan blive fanget af vores catch. Hvis vi ikke laver det til en error, tager den det som data som er noget godt, det skal det ikke være når der er fejl.
 
+  return response;
+};
+
+
+
+// -------------- OUR TEAM ------------
+
+
+// GET
+export const getOurTeam = () => {
+  // GET http://localhost:4444/team
+
+  // Her definere vi et endpoint, som i dette tilfælde er "team"
+
+  let response = axiosBase.get("team")
+    .then((resp) => {
+      return resp.data;
+    })
+    .catch((error) => {
+      throw new Error("Desværre, der er sket en fejl");
+    });
   return response;
 };

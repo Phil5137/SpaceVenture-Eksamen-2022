@@ -1,0 +1,58 @@
+// HELPERS
+@import "../helpers/colors.scss";
+
+
+.ourTeamContainer {
+
+    margin: 10% 0%;
+
+    .ourTeamCardsContainer {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 80px;
+        text-align: center;
+        height: 100%;
+        width: 100%;
+        padding: 0% 8%;
+
+        .ourTeamCards {
+            background-color: $lightGrey;
+            padding: 0% 5%;
+            
+            .cardContent{
+                position: relative;
+                top: -80px;
+                margin: auto 0;
+
+                .cardImg {
+                    width: 100%;
+                    border-radius: 100%;
+                    border: 10px solid #fff;
+                    object-fit: cover;
+                }
+
+            }
+            
+            
+            .cardName {
+                margin: 15px 0px 0px 0px;
+                font-size: 18px
+            }
+
+            .cardRole {
+                color: $lightBlue;
+                margin: 5px 0px 20px 0px;
+            }
+
+            .cardPhone {
+                margin: 0px 0px 0px 0px;
+            }
+        }
+
+    }
+
+
+
+}
