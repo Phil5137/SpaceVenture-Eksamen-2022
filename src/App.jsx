@@ -1,13 +1,18 @@
 import { Routes, Route } from "react-router-dom";
 import "./App.scss";
 
-// Component
+// Components
 import Layout from "./layout/Layout";
 import Home from "./pages/Home";
-import Kontakt from "./pages/Kontakt";
 import Login from "./pages/Login";
 import NoMatch from "./pages/NoMatch";
-import Om from "./pages/Om";
+import Tours from "./pages/Tours";
+import Gallery from "./pages/Gallery";
+import Safety from "./pages/Safety";
+import SpaceShuttle from "./pages/SpaceShuttle";
+import Contact from "./pages/Contact";
+import Moon from "./pages/Moon";
+import Mars from "./pages/Mars";
 
 // ADMIN Compontents
 import AdminLayout from "./layout/admin/AdminLayout"
@@ -16,7 +21,7 @@ import AdminTours from "./pages/admin/AdminTours";
 import AdminAbout from "./pages/admin/AdminAbout";
 import AdminToursCreate from "./pages/admin/AdminToursCreate";
 import AdminToursEdit from "./pages/admin/AdminToursEdit";
-import SearchResult from "./pages/SearchResult";
+
 
 
 function App() {
@@ -33,13 +38,18 @@ function App() {
       <Route path="/" element={<Layout />}>
 
         <Route index element={<Home />} />
-        <Route path="kontakt" element={<Kontakt />} />
-        <Route path="om" element={<Om />} />
+        <Route path="rumfaergen" element={<SpaceShuttle />} />
+        <Route path="ture" element={<Tours />} />
+        <Route path="maanen" element={<Moon />} />
+        <Route path="mars" element={<Mars />} />
+        <Route path="galleri" element={<Gallery />} />
+        <Route path="Sikkerhed" element={<Safety />} />
+        <Route path="kontakt" element={<Contact />} />
         <Route path="Login" element={<Login />} />
 
         {/* SØGNING */}
 
-        <Route path="search/:searchWord" element={ <SearchResult /> } />
+{/*         <Route path="search/:searchWord" element={ <SearchResult /> } /> */}
 
 
         {/* ------ NoMatch SKAL ligge nederst, da den spørg om alle url'erne matcher, hvis de gør bliver de vist, og url'en ikke matcher med noget, skal den vise siden NoMatch ------ */}

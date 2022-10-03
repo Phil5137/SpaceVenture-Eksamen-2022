@@ -1,11 +1,24 @@
+// HELPERS
+@import "../helpers/colors.scss";
+
+
+.active {
+  background-color: rgba(255, 255, 255, 0.116);
+  border-top: 4px solid $lightBlue;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
-  padding: 0% 5%;
-  background-color: rgb(129, 129, 129);
+  padding: 0% 8%;
+  background-color: $darkBlue;
   color: #fff;
+
+
+
+
 
 
   // BURGER-TOGGLE-BUTTON
@@ -47,14 +60,8 @@
 
   }
 
-  // BRAND
-  .navbar-brand {
-    font-size: 1.5rem;
-    margin: 1rem;
-    color: #fff;
-    text-decoration: none;
 
-  }
+
 
   // MENUEN
 
@@ -63,25 +70,29 @@
     display: flex;
     align-items: center;
 
+
     ul {
       display: flex;
       align-items: center;
       gap: 20px;
+      overflow: hidden;
+
 
       li {
         list-style-type: none;
         transition: padding 1s ease;
 
-        &:hover {
-          background-color: rgba(0, 0, 0, .5);
-        }
+        /*         &:hover {
+          background-color: rgba(255, 255, 255, 0.116);
+          border-top: 4px solid $lightBlue;
+        } */
       }
 
       a {
         display: block;
         text-decoration: none;
         color: #fff;
-        padding: 2rem;
+        padding: 1.2rem;
       }
     }
 
@@ -111,6 +122,16 @@
     }
 
   }
+
+  .iconContainer {
+    .icons {
+
+      margin-left: 20px;
+      font-size: 1.3rem;
+    }
+  }
+
+
 
 }
 
@@ -160,33 +181,33 @@
       }
 
 
-    
 
-    form {
-      justify-content: center;
-      padding-top: 10%;
 
-      input {
-        border: none;
-        padding: 2% 2%;
-        border-radius: 3px;
-      }
+      form {
+        justify-content: center;
+        padding-top: 10%;
 
-      button {
-        padding: 2% 2%;
-        border: none;
-        border-radius: 3px;
-        width: 70px;
-        background-color: transparent;
-        border: 2px solid #fff;
-        color: #fff;
+        input {
+          border: none;
+          padding: 2% 2%;
+          border-radius: 3px;
+        }
 
-        &:hover {
-          cursor: pointer;
+        button {
+          padding: 2% 2%;
+          border: none;
+          border-radius: 3px;
+          width: 70px;
+          background-color: transparent;
+          border: 2px solid #fff;
+          color: #fff;
+
+          &:hover {
+            cursor: pointer;
+          }
         }
       }
     }
-  }
 
   }
 }

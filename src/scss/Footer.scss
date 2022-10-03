@@ -1,10 +1,144 @@
-footer{
-    padding: 2.5% 0%;
-    background-color: #000;
+// HELPERS
+@import "../helpers/colors.scss";
 
-    p{
-        text-align: center;
-        color: #fff;
-        font-size: 20px;
+
+footer {
+
+    .footerUpper {
+        display: flex;
+        background-color: $darkBlue;
+        padding: 4% 8%;
+        justify-content: space-between;
+        align-items: center;
+
+        .active{
+            border: none;
+            background-color: transparent;
+        }
+
+
+        .footerContact {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+
+            h3 {
+                color: #fff;
+                font-weight: 400;
+            }
+
+            p {
+                color: #fff;
+            }
+
+            .icons {
+                color: $lightBlue;
+            }
+
+            .footerPhone {
+                display: flex;
+                align-items: center;
+                gap: 25px;
+            }
+
+            .footerMail {
+                display: flex;
+                align-items: center;
+                gap: 25px;
+            }
+
+            .footerAddress {
+                display: flex;
+                align-items: center;
+                gap: 25px;
+            }
+        }
+
+        .footerLinks {
+            color: #fff;
+
+            h3{
+                font-weight: 400;
+            }
+
+
+            ul {
+                position: relative;
+                left: 20px;
+            
+
+            section {
+                display: flex;
+                gap: 10rem;
+                margin-top: 30px;
+
+                li {
+                    margin-bottom: 10px;
+                    color: $lightBlue;
+                    
+                               
+                    a {
+                        text-decoration: none;
+                        color: #fff;
+                    }
+                }
+
+
+            }
+
+        }
+
+            button {
+                background-color: $lightBlue;
+                border: none;
+                list-style: none;
+                padding: 6% 9%;
+                margin-top: 20px;
+
+                &:hover{
+                    cursor: pointer;
+                }
+                
+                a {
+                    text-decoration: none;
+                    color: #fff;
+                    font-size: 15px;
+
+                }
+            }
+        }
+
+    }
+
+    .footerBottom {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        background-color: $darkerBlue;
+        padding: 2% 8%;
+        width: 100%;
+
+
+        .iconContainer {
+            text-align: center;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+
+
+            .icons {
+                color: rgb(92, 92, 92);
+                gap: 50px;
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+
+
+        p {
+            color: rgb(92, 92, 92);
+            font-size: 13px;
+        }
     }
 }

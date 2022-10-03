@@ -5,7 +5,11 @@ import "../scss/Header.scss"
 
 const Header = () => {
   return (
-    <header>Header</header>
+    <header>
+
+    <figure><img src={process.env.PUBLIC_URL + "img/logo.png"} /></figure>
+
+    </header>
   )
 }
 

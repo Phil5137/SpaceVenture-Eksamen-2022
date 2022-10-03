@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const axiosBase = axios.create({ baseURL: "http://localhost:5099/" });
+const axiosBase = axios.create({ baseURL: "http://localhost:4444/" });
 
 
 
@@ -8,7 +8,6 @@ const axiosBase = axios.create({ baseURL: "http://localhost:5099/" });
 
 
 // -------------- TOURS ------------
-
 
 
 
@@ -64,8 +63,6 @@ export const getTourById = (Id) => {
 };
 
 
-
-
 // POST - OPRET NY
 export const createTour = (newTour) => {
   // POST http://localhost:5099/tours/admin , formdata
@@ -80,7 +77,6 @@ export const createTour = (newTour) => {
 
   return response;
 };
-
 
 
 // PUT - RET (ud fra id)
@@ -100,7 +96,6 @@ export const updateTour = (updatedTour, Id) => {
 };
 
 
-
 // DELETE - SLET (ud fra id)
 export const deleteTour = (Id) => {
   // DELETE http://localhost:5099/tours/admin/xxxxxxxxxxxxxxxxxxxxx
@@ -115,7 +110,6 @@ export const deleteTour = (Id) => {
 
   return response;
 };
-
 
 
 
@@ -172,6 +166,50 @@ export const getToursSearch = ( searchKey ) => {
   // Her definere vi et endpoint, som i dette tilfælde er "tours"
 
   let response = axiosBase.get("tours/soeg/" + searchKey)
+    .then((resp) => { return resp.data; })
+    .catch((error) => { throw new Error("Desværre, der er sket en fejl"); });
+  // Vi thrower en ny Error så den kan blive fanget af vores catch. Hvis vi ikke laver det til en error, tager den det som data som er noget godt, det skal det ikke være når der er fejl.
+
+  return response;
+};
+
+
+
+
+
+
+// -------------- FOOTER ------------
+
+
+
+// GET FOOTER
+export const getFooter = () => {
+  // GET http://localhost:4444/footer
+
+  // Her definere vi et endpoint, som i dette tilfælde er "tours"
+
+  let response = axiosBase.get("footer")
+    .then((resp) => { return resp.data; })
+    .catch((error) => { throw new Error("Desværre, der er sket en fejl"); });
+  // Vi thrower en ny Error så den kan blive fanget af vores catch. Hvis vi ikke laver det til en error, tager den det som data som er noget godt, det skal det ikke være når der er fejl.
+
+  return response;
+};
+
+
+
+
+// -------------- BANNER ------------
+
+
+
+// GET FOOTER
+export const getBanner = () => {
+  // GET http://localhost:4444/banner
+
+  // Her definere vi et endpoint, som i dette tilfælde er "tours"
+
+  let response = axiosBase.get("banner")
     .then((resp) => { return resp.data; })
     .catch((error) => { throw new Error("Desværre, der er sket en fejl"); });
   // Vi thrower en ny Error så den kan blive fanget af vores catch. Hvis vi ikke laver det til en error, tager den det som data som er noget godt, det skal det ikke være når der er fejl.
