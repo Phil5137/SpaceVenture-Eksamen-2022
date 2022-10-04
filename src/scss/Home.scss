@@ -1,0 +1,15 @@
+// HELPERS
+@import "../helpers/colors.scss";
+
+
+.sliderContainer {
+    height: 90vh;
+    figure {
+        width: 100%;
+        img {
+            width: 100%;
+            height: 90vh;
+            object-fit: cover;
+        }
+    }
+}

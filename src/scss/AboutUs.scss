@@ -1,0 +1,88 @@
+// HELPERS
+@import "../helpers/colors.scss";
+
+.aboutUsContent{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5% 10% 0% 10%;
+    gap: 6rem;
+
+    figure{
+
+        width: 50%;
+        
+        img{
+            width: 100%;
+        }
+    }
+
+    div{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: left;
+        gap: 40px;
+        width: 50%;
+
+        h3{
+            font-size: 2rem ;
+
+        }
+
+        
+        h4{
+            font-size: 1.3rem;
+            letter-spacing: 2px;
+            color: $lightBlue;
+            text-transform: uppercase;
+
+            hr{
+                margin-top: 0.5rem;
+                height: 3px;
+                border-right: 235px solid $lightGrey;
+                border-left: 307px solid $lightBlue;
+                border-top: none;
+                border-bottom: none;
+                width: 76%;
+            }
+        }
+
+        p{
+            width: 87%;
+            line-height: 30px;
+        }
+
+        button {
+            background-color: $lightBlue;
+            border: none;
+            list-style: none;
+            padding: 4% 0%;
+            margin-top: 20px;
+            width: 40%;
+            
+
+            &:hover{
+                cursor: pointer;
+            }
+            
+            a {
+                text-decoration: none;
+                color: #fff;
+                font-size: 1.3rem;
+            }
+        }
+    }
+
+}
+
+
+// RESPONSIVE - TABLET
+@media (max-width: 800px) {
+
+    .aboutUsContent{
+        display: none;
+        
+    }
+
+  }

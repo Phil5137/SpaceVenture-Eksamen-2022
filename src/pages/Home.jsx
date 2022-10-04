@@ -1,37 +1,39 @@
 // SCSS
+import "../scss/Home.scss";
 
-import Newssubscription from "../compontents/Newssubscription"
-import OurTeam from "../compontents/OurTeam"
-import "../scss/Home.scss"
-
-
-
+// Components
+import AboutUs from "../compontents/AboutUs";
+import Newssubscription from "../compontents/Newssubscription";
+import OurTeam from "../compontents/OurTeam";
+import MoonAndMarsCards from "../compontents/MoonAndMarsCards";
+import Slider from "../compontents/Slider";
 
 const Home = () => {
-
-
   return (
+    <main className="homeContainer">
+      <section className="sliderContainer">
+        <figure>
+          <Slider />
+        </figure>
+      </section>
 
-    <div className="homeContainer">
+      <section className="moonAndMarsCardsContainer">
+        <MoonAndMarsCards />
+      </section>
 
+      <section className="aboutContainer">
+        <AboutUs />
+      </section>
 
-      <div className="ourTeamContainer">
-
+      <section className="ourTeamContainer">
         <OurTeam />
+      </section>
 
-      </div>
+      <section className="newsSubscriptionContainer">
+        <Newssubscription />
+      </section>
+    </main>
+  );
+};
 
-      
-    <div className="newsSubscriptionContainer">
-
-      <Newssubscription />
-
-    </div>
-
-
-    </div>
-    
-  )
-}
-
-export default Home
+export default Home;

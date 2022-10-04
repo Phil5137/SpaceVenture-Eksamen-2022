@@ -60,7 +60,30 @@ const Navbar = () => {
       {/* NAV - LINKS */}
 
       {/* Hvis showBurgerMenu (vores useState) er true, skal den både have klassen navbarLinks og active, active gør at den går fra 0 til 300 px i height, ellers skal den kun have klassen navbarLinks */}
+
+      <figure className="iconContainer">
+
+        {/* React-Icons */}
+
+        <FaFacebookF className="icons" />
+
+        <AiOutlineTwitter className="icons" />
+
+        <GrGooglePlus className="icons" />
+
+        <AiOutlineInstagram className="icons" />
+
+      </figure>
+
+
+
+      <figure className="navLogo">
+        <img src={process.env.PUBLIC_URL + "img/logo.png"} />
+      </figure>
+
       <div className={showBugerMenu ? "navbarLinks active" : "navbarLinks"} >  {/* Her bruger vi en Turnary Expression */}
+
+
 
         <ul>
           <li ><NavLink to="/" >Hjem</NavLink> </li>
@@ -94,19 +117,9 @@ const Navbar = () => {
       </div>
 
 
-      <figure className="iconContainer">
 
-        {/* React-Icons */}
 
-        <FaFacebookF className="icons" />
 
-        <AiOutlineTwitter className="icons" />
-
-        <GrGooglePlus className="icons" />
-
-        <AiOutlineInstagram className="icons" />
-
-      </figure>
 
 
       {/* <a href="#footer" >Footer</a> */}

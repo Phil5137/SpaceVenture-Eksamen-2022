@@ -7,7 +7,9 @@ const Header = () => {
   return (
     <header>
 
-    <figure><img src={process.env.PUBLIC_URL + "img/logo.png"} /></figure>
+    <figure>
+      <img src={process.env.PUBLIC_URL + "img/logo.png"} />
+    </figure>
 
     </header>
   )

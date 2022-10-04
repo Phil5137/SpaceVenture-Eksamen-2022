@@ -12,7 +12,7 @@ import { getOurTeam } from '../helpers/api.js';
 // Components
 import Loading from '../compontents/Loading';
 import Fejl from '../compontents/Fejl';
-import OurTeamData from '../compontents/OurTeamData';
+import OurTeamData from './OurTeamMap';
 
 
 
@@ -57,6 +57,9 @@ const OurTeam = () => {
 
   return (
     <div className="ourTeamContainer">
+
+      <h2>Vores Team</h2>
+
       {
         // Hvis api-kaldet loader - den venter på error eller data
         loading && <Loading />

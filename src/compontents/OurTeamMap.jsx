@@ -8,10 +8,12 @@ const OurTeamData = ({ ourTeamData }) => {
 
         <article className="ourTeamCards">
 
-            <div className="cardContent">
-                
-                    <img className="cardImg" src={"http://localhost:4444/images/team/" + ourTeamData.image} />
 
+
+             <img className="cardImg" src={"http://localhost:4444/images/team/" + ourTeamData.image} />
+
+
+            <div className="cardContent">
                 <h4 className="cardName"> {ourTeamData.name} </h4>
 
                 <h5 className="cardRole"> {ourTeamData.role} </h5>
