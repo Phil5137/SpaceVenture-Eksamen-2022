@@ -142,7 +142,7 @@ const Slider = () => {
                         <div className="dotContainer">
                             {
 
-                                bannerData.map((sliderImgs, i) =>
+                                bannerData.map((sliderImgs, i ) =>
                                     <span className="dot" onClick={() => setSlideIndex(i)} key={"dot" + i} ></span>
                                 )
                             }

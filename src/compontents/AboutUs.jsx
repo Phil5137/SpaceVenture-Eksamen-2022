@@ -52,7 +52,7 @@ const AboutUs = () => {
 
     <div className="aboutUsContainer">
 
-{
+      {
         // Hvis api-kaldet loader - den venter på error eller data
         loading && <Loading />
       }

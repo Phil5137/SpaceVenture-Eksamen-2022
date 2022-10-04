@@ -6,6 +6,8 @@ import "../scss/Tours.scss"
 const Tours = () => {
   return (
 
+
+
     <section className="tourContainer">
 
       <figure>
@@ -13,6 +15,7 @@ const Tours = () => {
       </figure>
 
       <h2>Ture</h2>
+
 
     </section>
 

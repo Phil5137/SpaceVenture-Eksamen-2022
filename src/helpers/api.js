@@ -245,6 +245,8 @@ export const getOurTeam = () => {
 };
 
 
+
+
 // -------------- ABOUT ------------
 
 
@@ -262,6 +264,32 @@ export const getAbout = () => {
 
     return response;
 };
+
+
+
+
+// -------------- SPACESHUTTLE ------------
+
+
+
+// GET SPACESHUTTLE
+export const getSpaceShuttle = () => {
+    // GET http://localhost:4444/spacecraft
+
+    // Her definere vi et endpoint, som i dette tilfælde er "about"
+
+    let response = axiosBase.get("spacecraft")
+        .then((resp) => { return resp.data; })
+        .catch((error) => { throw new Error("Desværre, der er sket en fejl"); });
+    // Vi thrower en ny Error så den kan blive fanget af vores catch. Hvis vi ikke laver det til en error, tager den det som data som er noget godt, det skal det ikke være når der er fejl.
+
+    return response;
+};
+
+
+
+
+
 
 // -------------- BANNER ------------
 
