@@ -105,7 +105,6 @@ const Slider = () => {
 
             <div className="slideshow-container">
 
-
                 {
                     // Hvis api-kaldet loader - den venter på error eller data
                     loading && <Loading />

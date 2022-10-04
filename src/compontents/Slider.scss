@@ -2,14 +2,13 @@
     @import "../helpers/colors.scss";
 
     .sliderContainer {
-        max-height: 100vh;
+        height: 80vh;
         // position: relative; // Hvis dotscontainer flyttet ind i div her
         /* Slideshow container */
         .slideshow-container {
             width: 100%;
             position: relative;
             margin: auto;
-            height: 100vh;
         
 
         /* Hide the images by default */
@@ -46,6 +45,7 @@
                 flex-direction: column;
                 height: auto;
                 gap: 15px;
+                height: 80vh;
  
 
                 h2 {
@@ -111,6 +111,7 @@
             right: 0;
             top: 0;
             width: auto;
+            height: 85vh;
 
 
             .dot {

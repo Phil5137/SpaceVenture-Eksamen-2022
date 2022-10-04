@@ -3,13 +3,17 @@
 
 
 .sliderContainer {
-    height: 90vh;
+    height: 80vh;
     figure {
         width: 100%;
         img {
             width: 100%;
-            height: 90vh;
+            height: 80vh;
             object-fit: cover;
         }
     }
+}
+
+.moonAndMarsCardsContainer{
+    background-color: $lightGrey;
 }

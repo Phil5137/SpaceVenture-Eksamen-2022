@@ -1,0 +1,28 @@
+.tourContainer {
+
+    display: grid;
+    grid-template-columns: 1fr; 
+    grid-template-rows: 1fr;
+
+    figure {
+        grid-column: 1/-1;
+        grid-row: 1/-1;
+        width: 100%;
+
+        img {
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    h2 {
+        font-size: 3rem;
+        grid-column: 1/-1;
+        grid-row: 1/-1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+    }
+
+}

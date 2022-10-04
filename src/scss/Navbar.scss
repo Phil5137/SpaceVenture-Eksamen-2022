@@ -1,18 +1,27 @@
 // HELPERS
 @import "../helpers/colors.scss";
+
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative;
+    position: sticky;
+    top: 0;
     padding: 0% 10%;
     background-color: $darkBlue;
     color: #fff;
     flex-direction: row-reverse;
+    z-index: 99;
+    width: 100%;
+    
+
+
     .active {
         background-color: rgba(255, 255, 255, 0.116);
         border-top: 4px solid $lightBlue;
     }
+
+
     // BURGER-TOGGLE-BUTTON
     .toggleButton {
         display: none; // Vises med flex i media!!!
@@ -24,6 +33,7 @@
         width: 32px;
         height: 26px;
         cursor: pointer;
+
         .bar {
             height: 4px;
             width: 100%;
@@ -33,25 +43,32 @@
             transition: all 1s ease;
             // Lax x ved klik
         }
+
         &.changeAnimation .bar1 {
             transform: rotate(45deg);
         }
+
         &.changeAnimation .bar2 {
             opacity: 0;
         }
+
         &.changeAnimation .bar3 {
             transform: rotate(-45deg);
         }
+
     }
+
     // MENUEN
     .navbarLinks {
         display: flex;
         align-items: center;
+
         ul {
             display: flex;
             align-items: center;
             gap: 20px;
             overflow: hidden;
+
             li {
                 list-style-type: none;
                 transition: padding 1s ease;
@@ -60,6 +77,7 @@
           border-top: 4px solid $lightBlue;
         } */
             }
+
             a {
                 display: block;
                 text-decoration: none;
@@ -67,14 +85,21 @@
                 padding: 1.2rem;
             }
         }
+
         form {
+
+
             display: flex;
             gap: 10px;
+
+
             input {
                 border: none;
                 padding: 2% 2%;
                 border-radius: 3px;
             }
+
+
             button {
                 padding: 2% 2%;
                 border: none;
@@ -83,21 +108,25 @@
                 background-color: transparent;
                 border: 2px solid #fff;
                 color: #000;
+
                 &:hover {
                     cursor: pointer;
                 }
             }
         }
     }
+
     .iconContainer {
         .icons {
             margin-left: 20px;
             font-size: 1.3rem;
         }
     }
+
     .navLogo {
         display: none;
         width: 0px;
+
         img {
             width: 0px;
         }
@@ -110,6 +139,7 @@
         background-color: transparent;
         border: none;
     }
+
     .navbar {
         flex-direction: column;
         background-color: #fff;
@@ -117,10 +147,12 @@
         color: #000;
         padding: 2% 8%;
         width: 100%;
+
         // vis bugermenu
         .toggleButton {
             display: flex;
             align-items: flex-start;
+
             .bar {
                 height: 4px;
                 width: 100%;
@@ -131,6 +163,7 @@
                 // Lax x ved klik
             }
         }
+
         // menuen (div rund om ul)
         .navbarLinks {
             height: 0;
@@ -138,19 +171,24 @@
             overflow: hidden;
             transition: height 1s ease-out;
             flex-direction: row-reverse;
+
             &.active {
                 height: 400px;
             }
+
             ul {
                 width: 100%;
                 flex-direction: column;
+
                 li {
                     text-align: center;
+
                     &:hover {
                         padding-left: 1.3rem;
                         text-decoration: underline;
                         text-underline-offset: 5px;
                     }
+
                     a {
                         padding: 0.5rem 1rem;
                         color: #000;
@@ -158,11 +196,14 @@
                 }
             }
         }
+
         .iconContainer {
             display: flex;
             width: 100%;
+
             .icons {}
         }
+
         /*  form {
       justify-content: center;
       padding-top: 5.5%;

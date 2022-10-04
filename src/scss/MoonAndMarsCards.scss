@@ -4,14 +4,13 @@
 
 .moonAndMarsCardsContainer {
 
-
     .moonAndMarsCardsContent {
         display: flex;
         justify-content: center;
         align-items: center;
         gap: 40px;
-        position: relative;
         bottom: 40px;
+        position: relative;
 
         .moonCard {
 
@@ -38,8 +37,8 @@
                 }
 
                 h3 {
-                    text-align: center;
                     position: relative;
+                    text-align: center;
                     bottom: 60px;
                     color: #fff;
                     font-size: 1.6rem;
@@ -127,9 +126,12 @@
 
         .moonAndMarsCardsContent {
             flex-direction: column;
+            bottom: 0;
+
     
             .moonCard {
-    
+                margin: 10% 0% 0% 0%;
+
                 a {
                     text-decoration: none;
     
@@ -164,7 +166,7 @@
             }
     
             .marsCard {
-    
+                    
                 a {
                     text-decoration: none;
     
@@ -210,6 +212,7 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
+            padding: 5% 0% 10% 0%;
     
             li {
                 text-align: center;

@@ -11,26 +11,39 @@ import Slider from "../compontents/Slider";
 const Home = () => {
   return (
     <main className="homeContainer">
+
       <section className="sliderContainer">
+
         <figure>
+
           <Slider />
+
         </figure>
+
       </section>
 
       <section className="moonAndMarsCardsContainer">
+
         <MoonAndMarsCards />
+
       </section>
 
       <section className="aboutContainer">
+
         <AboutUs />
+
       </section>
 
       <section className="ourTeamContainer">
+
         <OurTeam />
+
       </section>
 
       <section className="newsSubscriptionContainer">
+
         <Newssubscription />
+        
       </section>
     </main>
   );
