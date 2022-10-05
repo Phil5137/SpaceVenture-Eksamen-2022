@@ -15,6 +15,9 @@ import parser from "html-react-parser";
 // APIKALD
 import { getSpaceShuttle } from '../helpers/api.js';
 
+// APIKALD
+import { getGallery } from '../helpers/api.js'
+
 // Components
 import Loading from '../compontents/Loading';
 import Fejl from '../compontents/Fejl';
@@ -24,15 +27,19 @@ import Fejl from '../compontents/Fejl';
 const SpaceShuttle = () => {
 
   const [spaceShuttleData, setSpaceShuttleData] = useState() // data/tekst mv. der skal rettes
+  const [galleryData, setGalleryData] = useState() // data/tekst mv. der skal rettes
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
 
   // Kald api og put data (eller error) i state:
 
+
+
   useEffect(() => {
 
     setLoading(true)
 
+      // Henter indholdet fra "Spacecraft" fra API'et
     getSpaceShuttle()
       .then(data => {
         setSpaceShuttleData(data);
@@ -40,6 +47,28 @@ const SpaceShuttle = () => {
       .catch((err) => {
         setError(true);
         setSpaceShuttleData();
+      })
+      .finally(() => {
+        setLoading(false)
+      });
+
+  }, [])
+
+
+    // Kald api og put data (eller error) i state:
+
+  useEffect(() => {
+
+    setLoading(true)
+
+    // Henter billederne fra "Gallery" indefra API'et
+    getGallery()
+      .then(data => {
+        setGalleryData(data);
+      })
+      .catch((err) => {
+        setError(true);
+        setGalleryData();
       })
       .finally(() => {
         setLoading(false)
@@ -74,10 +103,12 @@ const SpaceShuttle = () => {
         // Hvis der apidata i vores state
         spaceShuttleData &&
 
+
+
         <section className="spaceShuttleContent">
 
           <figure>
-            <img src={process.env.PUBLIC_URL + "/img/banner-spaceship.jpg"} />
+            <img src={"http://localhost:4444/images/spacecraft/" + spaceShuttleData.image} />
           </figure>
 
           <div>
@@ -85,14 +116,14 @@ const SpaceShuttle = () => {
 
             <h4>{spaceShuttleData.title}
 
-              <hr />
+              {/* <hr /> */}
 
             </h4>
 
 
             <p>{parser(spaceShuttleData.content)}</p>
 
-          
+
           </div>
 
         </section>
@@ -100,27 +131,29 @@ const SpaceShuttle = () => {
 
       }
 
-      
+      {
+        galleryData &&
+
         <section className="spaceShuttleGallery">
 
           <h2 className="galleryHeadline">Galleri</h2>
 
           <figure>
 
-            <img src={process.env.PUBLIC_URL + "/img/spaceship1.jpg"} />
+            {
+              galleryData.map((galleryImgs, i) => 
+                <img className="cardImg" src={"http://localhost:4444/images/gallery/" + galleryImgs.image} alt={galleryImgs.imagetext} key={i}/>
+              )
+            }
 
-            <img src={process.env.PUBLIC_URL + "/img/spaceship2.jpg"} />
 
-            <img src={process.env.PUBLIC_URL + "/img/spaceship3.jpg"} />
-
-            <img src={process.env.PUBLIC_URL + "/img/spaceship4.jpg"} />
-
-            
 
 
           </figure>
 
         </section>
+      }
+
 
 
     </section>

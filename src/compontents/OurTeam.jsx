@@ -12,7 +12,7 @@ import { getOurTeam } from '../helpers/api.js';
 // Components
 import Loading from '../compontents/Loading';
 import Fejl from '../compontents/Fejl';
-import OurTeamData from './OurTeamMap';
+import OurTeamMap from './OurTeamMap';
 
 
 
@@ -80,7 +80,7 @@ const OurTeam = () => {
 
 
             ourTeamData.map(ourTeamData => (
-              <OurTeamData ourTeamData={ourTeamData} key={ourTeamData._id} />
+              <OurTeamMap ourTeamData={ourTeamData} key={ourTeamData._id} />
             ))
 
 

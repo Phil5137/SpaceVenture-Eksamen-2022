@@ -19,7 +19,7 @@ const MoonAndMarsCards = () => {
 
                 <div className="moonCard">
 
-                    <NavLink to="/maanen" >
+                    <NavLink to="/tour/617f8116066b123e4c7c941c" >
 
                         <figure>
 
@@ -31,14 +31,14 @@ const MoonAndMarsCards = () => {
 
 
                     </NavLink>
-                    
+
                 </div>
 
 
 
                 <div className="moonCard">
 
-                    <NavLink to="/mars" >
+                    <NavLink to="/tour/617f80a6066b123e4c7c941a" >
 
                         <figure>
 

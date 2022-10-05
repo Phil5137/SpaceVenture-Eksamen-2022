@@ -1,3 +1,6 @@
 Kildeliste: 
 
 1. Dropdown menu: https://www.w3schools.com/howto/howto_css_dropdown_navbar.asp
+
+
+2. Cut off corner SCSS: https://codepen.io/aaahollister/pen/wKwxNY?css-preprocessor=scss

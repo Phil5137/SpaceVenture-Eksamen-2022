@@ -2,7 +2,7 @@ import React from 'react'
 
 // Her har jeg destructure jeg props, så jeg kan skrive den ind med dens navn, i stedet for at skulle skrive props, for derefter at lave en variabel med den
 
-const OurTeamData = ({ ourTeamData }) => {
+const OurTeamMap = ({ ourTeamData }) => {
 
     return (
 
@@ -28,4 +28,4 @@ const OurTeamData = ({ ourTeamData }) => {
     )
 }
 
-export default OurTeamData
+export default OurTeamMap

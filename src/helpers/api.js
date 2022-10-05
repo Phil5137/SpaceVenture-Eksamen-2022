@@ -45,7 +45,7 @@ export const getToursTeaser = () => {
 };
 
 
-// GET BY ID
+/* // GET BY ID
 export const getTourById = (Id) => {
     // GET http://localhost:5099/tours/625c787debadcefe8ed39ac9
 
@@ -60,7 +60,7 @@ export const getTourById = (Id) => {
         });
 
     return response;
-};
+}; */
 
 
 // POST - OPRET NY
@@ -308,3 +308,61 @@ export const getBanner = () => {
 
     return response;
 };
+
+
+// -------------- TURE ------------
+
+
+
+// GET ABOUT-US
+export const getTours = () => {
+    // GET http://localhost:4444/tours
+
+    // Her definere vi et endpoint, som i dette tilfælde er "tours"
+
+    let response = axiosBase.get("tours")
+        .then((resp) => { return resp.data; })
+        .catch((error) => { throw new Error("Desværre, der er sket en fejl"); });
+    // Vi thrower en ny Error så den kan blive fanget af vores catch. Hvis vi ikke laver det til en error, tager den det som data som er noget godt, det skal det ikke være når der er fejl.
+
+    return response;
+};
+
+
+// GET BY ID
+export const getTourById = (Id) => {
+    // GET http://localhost:4444/tours/617af72128fc8765b05fbbc5
+
+    // Her definere vi et endpoint med et id, som i dette tilfælde er "tours/id"
+
+    let response = axiosBase.get("tours/" + Id)
+        .then((resp) => {
+            return resp.data;
+        })
+        .catch((error) => {
+            throw new Error("Desværre, der er sket en fejl");
+        });
+
+    return response;
+};
+
+
+// -------------- GALLERY ------------
+
+
+// GET GALLERY
+export const getGallery = () => {
+    // GET http://localhost:4444/gallery
+
+    // Her definere vi et endpoint, som i dette tilfælde er "tours"
+
+    let response = axiosBase.get("gallery")
+        .then((resp) => { return resp.data; })
+        .catch((error) => { throw new Error("Desværre, der er sket en fejl"); });
+    // Vi thrower en ny Error så den kan blive fanget af vores catch. Hvis vi ikke laver det til en error, tager den det som data som er noget godt, det skal det ikke være når der er fejl.
+
+    return response;
+};
+
+
+

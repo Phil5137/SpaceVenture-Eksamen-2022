@@ -3,6 +3,12 @@ import React from 'react'
 // SCSS
 import "./Pagination.scss"
 
+// React-Icons
+import { RiArrowRightSFill } from 'react-icons/ri';
+import { RiArrowLeftSFill } from 'react-icons/ri';
+
+
+
 const Pagination = ( props ) => {
 
     // Fra
@@ -45,7 +51,7 @@ const Pagination = ( props ) => {
             onClick={() => turnPage(currentPage - 1)}
             key={ "p" + 1}
             >
-            &lt; &lt; Prev
+            <RiArrowLeftSFill size={"1.5rem"}/>
             </button>
 
                 {
@@ -54,7 +60,7 @@ const Pagination = ( props ) => {
 
             {/* Der er 8 tours vi dividerer med 3 sider, og plusser med 1, da den starter på 0, 1, 2 osv. */}
 
-            <button disabled={currentPage >= numberOfPages - 1} onClick={() => turnPage(currentPage + 1)}>Next &gt; &gt;</button>
+            <button disabled={currentPage >= numberOfPages - 1} onClick={() => turnPage(currentPage + 1)}><RiArrowRightSFill size={"1.5rem"}/></button>
 
 
         </div>

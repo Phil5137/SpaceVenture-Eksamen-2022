@@ -1,0 +1,75 @@
+// HELPERS
+@import "../helpers/colors.scss";
+
+.contactContainer {
+
+    .contactMapContainer {
+        padding: 2% 10%;
+
+        .map {
+
+            width: 100%;
+            height: 600px;
+            border: none;
+
+        }
+    }
+
+    .contactBottomContent {
+        padding: 4% 10%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .contactTextContainer{
+            display: flex;
+            gap: 20px;
+
+            h4{
+                font-size: 2rem;
+            }
+
+            hr{
+                height: 30px;
+                padding: 0px 1px;
+                border: none;
+                background-color: $lightGrey;
+            }
+
+        }
+
+            form {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(3, auto);
+                gap: 15px;
+                width: 100%;
+                
+
+                input, textarea{
+                    border: none;
+                    background-color: $lightGrey;
+                    width: 100%;
+
+                }
+
+                input{
+                    padding: 5% 3%;
+                    width: 100%;
+                }
+
+
+                textarea{
+                    grid-column: 1 / 4;
+                    padding: 1% 1%;
+                    resize: none;
+                    width: 100%;
+                    height: 20vh;
+                }
+
+                   
+
+            }
+    }
+
+}

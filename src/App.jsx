@@ -11,8 +11,7 @@ import Gallery from "./pages/Gallery";
 import Safety from "./pages/Safety";
 import SpaceShuttle from "./pages/SpaceShuttle";
 import Contact from "./pages/Contact";
-import Moon from "./pages/Moon";
-import Mars from "./pages/Mars";
+import Tour from "./compontents/Tour";
 
 // ADMIN Compontents
 import AdminLayout from "./layout/admin/AdminLayout"
@@ -40,12 +39,14 @@ function App() {
         <Route index element={<Home />} />
         <Route path="rumfaergen" element={<SpaceShuttle />} />
         <Route path="ture" element={<Tours />} />
-        <Route path="maanen" element={<Moon />} />
-        <Route path="mars" element={<Mars />} />
+
+        <Route path="tour/:tourId" element={<Tour />} />
         <Route path="galleri" element={<Gallery />} />
         <Route path="Sikkerhed" element={<Safety />} />
         <Route path="kontakt" element={<Contact />} />
         <Route path="Login" element={<Login />} />
+
+        
 
         {/* SØGNING */}
 
