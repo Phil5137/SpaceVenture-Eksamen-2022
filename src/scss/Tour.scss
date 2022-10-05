@@ -1,0 +1,385 @@
+// HELPERS
+@import "../helpers/colors.scss";
+
+
+.singleTourContainer {
+    padding: 5% 10%;
+
+
+    .tourContentContainer {
+
+        display: flex;
+        gap: 100px;
+        position: relative;
+
+
+        .tourImgContainer {
+            width: 65%;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+
+
+            figure {
+                width: 100%;
+
+                img {
+                    width: 100%;
+                }
+            }
+        }
+
+        .tourTextContainer {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 35%;
+
+            h3 {
+                font-size: 2rem;
+            }
+
+            .topBlueHr {
+                background-color: $lightBlue;
+                height: 4px;
+                border: none;
+                width: 15%;
+                margin: 3% 0% 2% 0%;
+            }
+
+            .tourPrice {
+                /* Display flex for at centrer teksten inde i pristagget */
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 8%;
+                background: linear-gradient(45deg, transparent 15px, $lightBlue 0px);
+                height: 70px;
+                color: #fff;
+                font-size: 1.3rem;
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
+        }
+
+        .tourTopTextContainer {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            color: rgb(175, 175, 175);
+
+            .tourContentText {
+                display: flex;
+                flex-direction: column;
+                gap: 40px;
+                line-height: 30px;
+
+            }
+
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            li {
+                list-style: none;
+                color: rgb(175, 175, 175);
+            }
+
+            div {
+                display: flex;
+                gap: 10px;
+
+                p {
+                    color: #000;
+                }
+            }
+
+        }
+
+        .tourLinkContainer{
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        hr{
+            margin: 7% 0%;
+        }
+
+
+    }
+}
+
+// RESPONSIVE - MOBIL
+@media (max-width: 800px) {
+
+    .singleTourContainer {
+        padding: 5% 10%;
+    
+    
+        .tourContentContainer {
+    
+            display: flex;
+            flex-direction: column;
+            gap: 100px;
+
+            text-align: center;
+    
+    
+            .tourImgContainer {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+    
+    
+                figure {
+                    width: 100%;
+    
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+    
+            .tourTextContainer {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                width: 100%;
+                position: relative;
+
+    
+                h3 {
+                    font-size: 2rem;
+                }
+    
+                .topBlueHr {
+                    background-color: $lightBlue;
+                    height: 4px;
+                    border: none;
+                    width: 15%;
+                    margin: 3% auto 2% auto;
+    
+                }
+    
+                .tourPrice {
+                    /* Display flex for at centrer teksten inde i pristagget */
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 20%;
+                    background: linear-gradient(45deg, transparent 15px, $lightBlue 0px);
+                    height: 40px;
+                    color: #fff;
+                    font-size: 1.3rem;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                }
+            }
+    
+            .tourTopTextContainer {
+                display: flex;
+                flex-direction: column;
+                gap: 40px;
+                color: rgb(175, 175, 175);
+    
+                .tourContentText {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 40px;
+                    line-height: 30px;
+    
+                }
+    
+            }
+    
+            ul {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+    
+                li {
+                    list-style: none;
+                    color: rgb(175, 175, 175);
+                }
+    
+                div {
+                    display: flex;
+                    gap: 10px;
+                    justify-content: center;
+    
+                    p {
+                        color: #000;
+                    }
+                }
+    
+            }
+    
+            .tourLinkContainer{
+                display: flex;
+                gap: 20px;
+                align-items: center;
+                justify-content: center;
+            }
+    
+            hr{
+                margin: 7% 0%;
+            }
+    
+    
+        }
+    }
+    
+
+        .footerUpper {
+            display: flex;
+            background-color: $darkBlue;
+            padding: 4% 10%;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            gap: 50px;
+
+    
+            .active{
+                border: none;
+                background-color: transparent;
+            }
+    
+    
+            .footerContact {
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+    
+                h3 {
+                    color: #fff;
+                    font-weight: 400;
+                }
+    
+                p {
+                    color: #fff;
+                }
+    
+                .icons {
+                    color: $lightBlue;
+                }
+    
+                .footerPhone {
+                    display: flex;
+                    align-items: center;
+                    gap: 25px;
+                }
+    
+                .footerMail {
+                    display: flex;
+                    align-items: center;
+                    gap: 25px;
+                }
+    
+                .footerAddress {
+                    display: flex;
+                    align-items: center;
+                    gap: 25px;
+                }
+            }
+    
+            .footerLinks {
+                color: #fff;
+    
+                h3{
+                    font-weight: 400;
+                }
+    
+    
+                ul {
+                    position: relative;
+                    left: 20px;
+                
+    
+                section {
+                    flex-direction: column;
+                    gap: 0px;
+
+    
+                    li {
+                        margin-bottom: 10px;
+                        color: $lightBlue;
+                        font-size: 20px;
+                        
+                                   
+                        a {
+                            text-decoration: none;
+                            color: #fff;
+                        }
+                    }
+    
+    
+                }
+    
+            }
+    
+                button {
+                    background-color: $lightBlue;
+                    border: none;
+                    list-style: none;
+                    padding: 6% 9%;
+                    margin-top: 20px;
+    
+                    &:hover{
+                        cursor: pointer;
+                    }
+                    
+                    a {
+                        text-decoration: none;
+                        color: #fff;
+                        font-size: 15px;
+    
+                    }
+                }
+            }
+    
+        }
+    
+        .footerBottom {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            background-color: $darkerBlue;
+            padding: 2% 8%;
+            width: 100%;
+    
+    
+            .iconContainer {
+                text-align: center;
+                display: flex;
+                gap: 20px;
+                justify-content: center;
+    
+    
+                .icons {
+                    color: rgb(92, 92, 92);
+                    gap: 50px;
+    
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+            }
+    
+    
+            p {
+                color: rgb(92, 92, 92);
+                font-size: 13px;
+            }
+        }
+   
+
+}

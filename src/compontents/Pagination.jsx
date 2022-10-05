@@ -7,8 +7,6 @@ import "./Pagination.scss"
 import { RiArrowRightSFill } from 'react-icons/ri';
 import { RiArrowLeftSFill } from 'react-icons/ri';
 
-
-
 const Pagination = ( props ) => {
 
     // Fra
@@ -29,7 +27,7 @@ const Pagination = ( props ) => {
         let pageButtons = []
     
         for ( let index = 0; index < numberOfPages; index++) {
-                                                            // Hvis den side vi er på svbrer til index, skal den have klassen "paginationActive"
+                                                            // Hvis den side vi er på svarer til index, skal den have klassen "paginationActive"
           pageButtons.push( <button onClick={ () => setCurrentPage( index ) } className={ currentPage === index ? "paginationActive" : null }>{ index + 1 }</button> )
     
         }

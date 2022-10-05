@@ -22,24 +22,24 @@ const Newssubscription = () => {
 
         setLoading(true)
 
-        // Snup indhold ra formular og lav et formdata-objekt til API'et
+        // Snup indhold fra formular og lav et formdata-objekt til API'et
         let formData = new FormData(e.target)
 
         subscribeNews(formData).then((data) => {
             setTilmeldt(true)
             setError(false)
         })
-
             .catch((err) => {
 
                 setTilmeldt(false)
                 setError(true)
             })
-
             .finally(() => {
                 setLoading(false)
             })
     }
+
+
     return (
         <div className="newssubscription">
 

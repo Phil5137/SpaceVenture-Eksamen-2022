@@ -83,7 +83,7 @@ const SpaceShuttle = () => {
 
     <section className="spaceShuttleContainer">
 
-      <figure>
+      <figure className="bannerimg">
         <img src={process.env.PUBLIC_URL + "/img/banner-spaceship.jpg"} />
       </figure>
 

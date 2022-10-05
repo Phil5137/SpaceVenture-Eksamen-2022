@@ -329,6 +329,8 @@ export const getTours = () => {
 };
 
 
+
+
 // GET BY ID
 export const getTourById = (Id) => {
     // GET http://localhost:4444/tours/617af72128fc8765b05fbbc5
@@ -364,5 +366,22 @@ export const getGallery = () => {
     return response;
 };
 
+
+
+// -------------- CONTACT ------------
+
+// POST - Send Mail - Kontakt
+export const sendMail = (sendData) => {
+    // GET http://localhost:4444/contact (medsend email og name)
+
+    console.log("send", sendData);
+
+    let response = axiosBase.post("contact", sendData)
+        .then((resp) => { return resp.data; })
+        .catch((error) => { throw new Error("Desværre, der er sket en fejl"); });
+    // Vi thrower en ny Error så den kan blive fanget af vores catch. Hvis vi ikke laver det til en error, tager den det som data som er noget godt, det skal det ikke være når der er fejl.
+
+    return response;
+};
 
 

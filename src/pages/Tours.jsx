@@ -30,7 +30,7 @@ const Tours = () => {
   // State til pagination
   const [numberPerPage, setNumberPerPage] = useState(2) // Hvor mange vi vil have per side
 
-  // State til 
+  // State til pagination
   const [currentPage, setCurrentPage] = useState(0) // 0 svarer til side 1!!!
 
   // Kald api og put data (eller error) i state:
@@ -61,7 +61,7 @@ const Tours = () => {
 
   return (
 
-    <section className="tourContainer">
+    <section className="toursContainer">
 
       <figure className="tourBannerImg">
         <img src={process.env.PUBLIC_URL + "/img/banner-ture.jpg"} />
@@ -86,8 +86,8 @@ const Tours = () => {
         <div className="ToursCardsContainer">
 
           {
-            toursData.reverse().slice((currentPage * numberPerPage), (currentPage * numberPerPage) + numberPerPage).map(toursData =>
-              <article className="toursCards">
+            toursData.reverse().slice((currentPage * numberPerPage), (currentPage * numberPerPage) + numberPerPage).map( (toursData, i) =>
+              <article className="toursCards" key={ i }>
 
 
                 <figure>
@@ -95,24 +95,26 @@ const Tours = () => {
                 </figure>
 
 
-                  <div className="cardContent">
+                <div className="cardContent">
 
-                    <h4 className="cardName"> {toursData.title} </h4>
+                  <h4 className="cardName"> {toursData.title} </h4>
 
-                    <div className="cardText"> {parser(toursData.content)} </div>
+                  <div className="cardText"> {parser(toursData.content)} </div>
 
 
-                    <Link to={"/tour/" + toursData._id}>
-                      <button>Se mere</button>
-                    </Link>
+                  <Link to={"/tour/" + toursData._id}>
+                    <button>Se mere</button>
+                  </Link>
 
-                  </div>
+                </div>
 
 
                 <p className="cardPrice"> {toursData.price}</p>
 
               </article>
+
             )
+
           }
 
           <Pagination
@@ -120,6 +122,8 @@ const Tours = () => {
             currentPage={currentPage} // Fra state
             numberOfPages={Math.ceil(toursData.length / numberPerPage)} // beregning af hvor mange sidelink/-knapper der skal laves7
           />
+
+
 
         </div>
       }
