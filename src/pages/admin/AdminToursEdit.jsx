@@ -143,92 +143,51 @@ const AdminToursEdit = () => {
         
             <form onSubmit={ handleSubmit }>
 
+
                 <label>Titel:
                     <input type="text" name="title" defaultValue={ tour.title } required placeholder="Titel..."/>
                 </label>
 
-                <label>Teaser:
-                    <textarea name="teaser" required placeholder="Teaser tekst..." defaultValue={ tour.teaser }></textarea>
-                </label>
 
-                <label>Beskrivelse:
+                <label>Tur beskrivelse:
                     {/* TEXTAREA HAR FÅET DISPLAY NONE HER!!!!!!!!!!!!!!!!!!!!!!!! */}
-                    <textarea style={{ display: "none" }} name="content" defaultValue={ editorTextContent } required placeholder="Beskrivelse..."/>
-                </label>
-                <div className="ckeEditor">
-                    {/* Fødekanal til textarea som skal skjules men være der */}
-                    <CKEditor className="editor"
-                        editor={ Editor }
-                        data = { tour.content }
-                        // Vi laver en onChange som siger at når der ændres i teksten, skal den hente data
-                        onChange = { ( event, editor ) => {
-                            
-                            setEditorTextContent( editor.getData())
-                        } }
-
-                         onReady={ ( editor ) => {
-                            setEditorTextContent( editor.getData() )
-                        } }
-                   
-                    />
-                    </div>
-
-                <label>Værelsestype:
-                    {/* TEXTAREA HAR FÅET DISPLAY NONE HER!!!!!!!!!!!!!!!!!!!!!!!! */}
-                    <textarea style={{ display: "none" }} name="roomtype" defaultValue={ editorTextRoomType } required placeholder="Værelsestype..."/>
+                    <textarea style={{ display: "none" }} name="content" defaultValue={ tour.content } required placeholder="Beskrivelse..." />
                 </label>
                 <div className="ckeEditor">
                     <CKEditor className="editor"
-                        editor={ Editor }
-                        data = { tour.roomtype }
+                        editor={Editor}
+                        data={tour.content}
                         // Vi laver en onChange som siger at når der ændres i teksten, skal den hente data
-                        onChange = { ( event, editor ) => {
-                            
-                            setEditorTextRoomType( editor.getData())
-                        } }
+                        onChange={(event, editor) => {
 
-                        onReady={ ( editor ) => {
-                            setEditorTextRoomType( editor.getData() )
-                        } }
+                            setEditorTextContent(editor.getData())
+                        }}
 
                     />
-                    </div>
+                </div>
 
-                <label>Rejsedato:
-                    <input type="date" name="traveldate" required placeholder="Rejsedato..."  defaultValue={ new Date( tour.traveldate ).toLocaleDateString( "fr-CA" ) }
-                    min={ new Date().toLocaleDateString ( "fr-CA" ) }
-                    /* Her gør vi så brugeren ikke kan vælge en dato der er ældre end den idag. Han skal mindst vælge idag også frem. */
-                    />
-                    {/* Et HACK! Her bruger vi den franske canadiske da de tilfæligvis udskriver deres dato som vi gerne vil have den. Som er yyyy-mm-dd */}
+                <label>Destination:
+                    <input type="text" name="destination" required defaultValue={ tour.destination } placeholder="Destination..." />
                 </label>
 
-                <label>Varighed i dage:
-                    <input type="number" name="duration" min="1" max="500" defaultValue={ tour.duration } required placeholder="Tourens varighed (i dage)..."/>
+                <label>Turens pris:
+                    <input type="text" name="price" required defaultValue={ tour.price } placeholder="Pris..." />
                 </label>
 
-                <label>Pris, minimun:
-                    <input type="number" name="priceminimum" required defaultValue={ tour.priceminimum } placeholder="Minimumspris..."/>
+                <label>Rejsetid:
+                    <input type="text" name="traveltime" required defaultValue={ tour.traveltime } placeholder="Rejsetid..." />
                 </label>
 
-                <label>Pris, maksimum:
-                    <input type="number" name="pricemaximum" required defaultValue={ tour.priceminimum } placeholder="Maksimumspris..."/>
+                <label>Afstand fra jorden:
+                    <input type="text" name="distance" required defaultValue={ tour.distance } placeholder="Afstand fra jorden..." />
                 </label>
-
-                        nuværende billede: <img src={ "http://localhost:5099/images/tours/" + tour.coverimage } alt="Nuværende cover-foto" />
-                <label>Upload eventuelt et nyt coverbillede (overskriver det nuværende):
-                    <input type="file" name="image" accept="image/x-png,image/gif,image/jpeg"/>
-                </label>
-
-                Nuværende galleri-billeder:
-                {
-                    // i er den indbyggede "tæller" i map - tæller 0,1,2 osv. for hver runde - her bruger vi den til key (fordi billederne ikke hver i sær har et unikt id)
-                    tour.gallery.map( ( gallery, i ) => <img src={ "http://localhost:5099/images/tours/" + gallery} alt="galleri" key={ i } />)
-                }
 
                 <label>
-                Upload eventuelt nogen nye galleribilleder (overskriver de nuværende)
-                    <input type="file" name="galleryimages" multiple accept="image/x-png,image/gif,image/jpeg" />
-                </label>
+                        nuværende billeder: 
+                        <img src={ "http://localhost:4444/images/tours/" + tour.image1 } alt="Nuværende cover-foto" />
+                        <img src={ "http://localhost:4444/images/tours/" + tour.image2 } alt="Nuværende cover-foto" />
+                        </label>
+              
 
                 <button type="submit">Gem rettelse</button>
 

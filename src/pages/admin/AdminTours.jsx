@@ -131,14 +131,17 @@ const AdminTours = () => {
 
 
           
-                  <h2>{t.title}</h2>
+                  <h2>{t.destination}</h2>
 
-                  <p>{t.teaser}</p>
+                  <p>{t.title}</p>
 
+                  
             
                 <div className="iconContainer">
                   <AiOutlineDelete className="icons" size= "2rem" color="red" onClick={() => handleDelete(t._id, t.title)} />
+
                   <Link to={ "/admin/admintoursedit/" + t._id }> <AiOutlineEdit className="icons" size="2rem" color="green" /></Link>
+
                 </div>
               </section>
             )

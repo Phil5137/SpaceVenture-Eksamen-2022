@@ -45,23 +45,32 @@ Editor.defaultConfig = {
 			'redo'
 		]
 	},
+
 	fontColor: {
         colors: [ {
-            color: '#E64C4C',
-            label: 'Red'
+            color: '#01b3a7ff',
+            label: 'Lyseblå'
         },
         {
-            color: '#E6994C',
-            label: 'Orange'
+            color: '#f7f7f7ff',
+            label: 'Lysegrå'
         },
         {
-            color: '#E6E64C',
-            label: 'Yellow'
+            color: '#162e44ff',
+            label: 'Mørkeblå'
+        },
+		{
+            color: '#fff',
+            label: 'Hvid'
+        },
+		{
+            color: '#000',
+            label: 'Sort'
         },
         {
-            color: 'C0392B',
-            label: 'FTAred'
-        },
+            color: '#11263aff',
+            label: 'Mørkeblå'
+        }
         ]
     },
 	language: 'da'
