@@ -75,17 +75,11 @@ const Navbar = () => {
 
       </figure>
 
-
-
-      <figure className="navLogo">
-        <img src={process.env.PUBLIC_URL + "img/logo.png"} />
-      </figure>
-
       <div className={showBugerMenu ? "navbarLinks active" : "navbarLinks"} >  {/* Her bruger vi en Turnary Expression */}
 
 
 
-        <ul>
+        <ul onClick={() => setShowBugerMenu(!showBugerMenu)}>
           <li ><NavLink to="/" >Hjem</NavLink> </li>
           <li> <NavLink to="/rumfaergen" >Rumfærgen</NavLink> </li>
           <li> <NavLink to="/ture" >Ture</NavLink> </li>

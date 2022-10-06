@@ -4,25 +4,20 @@
 .navbar {
     display: flex;
     justify-content: space-between;
+    flex-direction: row-reverse;
     align-items: center;
-    position: sticky;
-    top: 0;
+    position: relative;
     padding: 0% 10%;
     background-color: $darkBlue;
     color: #fff;
-    flex-direction: row-reverse;
-    z-index: 99;
-    width: 100%;
-    
-
 
     .active {
-        background-color: rgba(255, 255, 255, 0.116);
+        background-color: rgba(148, 148, 148, 0.3);
         border-top: 4px solid $lightBlue;
     }
 
-
     // BURGER-TOGGLE-BUTTON
+
     .toggleButton {
         display: none; // Vises med flex i media!!!
         position: absolute;
@@ -40,7 +35,9 @@
             background-color: rgb(255, 255, 255);
             border-radius: 10px;
             transform-origin: left;
+
             transition: all 1s ease;
+
             // Lax x ved klik
         }
 
@@ -59,7 +56,9 @@
     }
 
     // MENUEN
+
     .navbarLinks {
+
         display: flex;
         align-items: center;
 
@@ -67,15 +66,10 @@
             display: flex;
             align-items: center;
             gap: 20px;
-            overflow: hidden;
 
             li {
                 list-style-type: none;
                 transition: padding 1s ease;
-                /*         &:hover {
-          background-color: rgba(255, 255, 255, 0.116);
-          border-top: 4px solid $lightBlue;
-        } */
             }
 
             a {
@@ -86,82 +80,45 @@
             }
         }
 
-        form {
-
-
-            display: flex;
-            gap: 10px;
-
-
-            input {
-                border: none;
-                padding: 2% 2%;
-                border-radius: 3px;
-            }
-
-
-            button {
-                padding: 2% 2%;
-                border: none;
-                border-radius: 3px;
-                width: 70px;
-                background-color: transparent;
-                border: 2px solid #fff;
-                color: #000;
-
-                &:hover {
-                    cursor: pointer;
-                }
-            }
-        }
     }
 
     .iconContainer {
-        .icons {
-            margin-left: 20px;
-            font-size: 1.3rem;
-        }
+        display: flex;
+        gap: 20px;
+        font-size: 1.5rem;
     }
 
-    .navLogo {
-        display: none;
-        width: 0px;
-
-        img {
-            width: 0px;
-        }
-    }
 }
 
-// BURGERMENU - RESPONSIVE MOBIL
-@media (max-width: 800px) {
-    .active {
-        background-color: transparent;
-        border: none;
-    }
 
+// BURGERMENU - RESPONSIVE TABLET
+
+@media (max-width: 800px) {
     .navbar {
         flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 2% 0%;
         background-color: #fff;
-        justify-content: space-between;
         color: #000;
-        padding: 2% 8%;
-        width: 100%;
-        box-shadow: 0px 0px 10px rgb(199, 199, 199);
+
+        .active {
+            background-color: transparent;
+            border-top: none;
+            text-decoration: underline;
+            text-underline-offset: 5px;
+        }
 
         // vis bugermenu
         .toggleButton {
             display: flex;
             align-items: flex-start;
 
+            right: 10px;
+            bottom: 0;
+
             .bar {
-                height: 4px;
-                width: 100%;
                 background-color: #000;
-                border-radius: 10px;
-                transform-origin: left;
-                transition: all 1s ease;
-                // Lax x ved klik
             }
         }
 
@@ -170,25 +127,25 @@
             height: 0;
             width: 100%;
             overflow: hidden;
-            transition: height 1s ease-out;
-            flex-direction: row-reverse;
+            transition: height 0.8s ease-out;
+            flex-direction: column;
 
             &.active {
-                height: 400px;
+                height: 390px;
             }
 
             ul {
                 width: 100%;
                 flex-direction: column;
+                margin-top: 2%;
 
                 li {
                     text-align: center;
 
                     &:hover {
                         padding-left: 1.3rem;
-                        text-decoration: underline;
-                        text-underline-offset: 5px;
                     }
+
 
                     a {
                         padding: 0.5rem 1rem;
@@ -196,38 +153,12 @@
                     }
                 }
             }
+
+
+            .iconContainer {
+                position: relative;
+            }
+
         }
-
-        .iconContainer {
-            display: flex;
-            width: 100%;
-
-            .icons {}
-        }
-
-        /*  form {
-      justify-content: center;
-      padding-top: 5.5%;
-
-      input {
-        border: none;
-        padding: 1% 1%;
-        border-radius: 3px;
-      }
-
-      button {
-        padding: 1% 2%;
-        border: none;
-        border-radius: 3px;
-        width: 70px;
-        background-color: transparent;
-        border: 2px solid #fff;
-        color: #fff;
-
-        &:hover {
-          cursor: pointer;
-        }
-      }
-    } */
     }
 }
