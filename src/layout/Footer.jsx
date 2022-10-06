@@ -89,7 +89,11 @@ const Footer = () => {
 
               <FaPhoneAlt className="icons" />
 
-              <p> +45 {footerData.phone}</p>
+
+              <a href="tel:info@spaceventure.dk">
+                <p> +45 {footerData.phone}</p>
+
+              </a>
 
             </div>
 
@@ -97,7 +101,13 @@ const Footer = () => {
 
               <FaEnvelope className="icons" />
 
-              <p>{footerData.email}</p>
+
+              <a href="mailto:info@spaceventure.dk">
+
+                <p>{footerData.email}</p>
+
+              </a>
+
 
             </div>
 
@@ -105,7 +115,10 @@ const Footer = () => {
 
               <FaLocationArrow className="icons" />
 
+
+              <a href="https://goo.gl/maps/rVDK6KNMkKwA75xn8">
               <p>{footerData.address}</p>
+              </a>
 
             </div>
 

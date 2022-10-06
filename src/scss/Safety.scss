@@ -1,0 +1,46 @@
+.safetyContainer{
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    
+     .safetyBannerimg {
+        grid-column: 1/-1;
+        grid-row: 1/-1;
+        max-width: 100%;
+    
+        img {
+            width: 100%;
+            height: 42vh;
+            object-fit: cover;
+        }
+
+    }
+    h2 {
+        font-size: 3rem;
+        grid-column: 1/-1;
+        grid-row: 1/-1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+    }
+
+    .safetyContentContainer{
+        padding: 4% 10%;
+        
+
+        h3{
+            text-align: center;
+            margin: 0% 0% 2% 0%;
+            font-size: 2rem;
+        }
+
+        p{
+            line-height: 30px;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+    }
+
+}

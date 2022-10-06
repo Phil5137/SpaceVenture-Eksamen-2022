@@ -8,40 +8,40 @@ const Gallery = () => {
     <section className="galleryContainer">
 
       <figure className="bannerimg">
-        <img src={process.env.PUBLIC_URL + "/img/banner-spaceship.jpg"} />
+        <img src="/img/banner-spaceship.jpg" alt="Billede af jorden - Fra gallerisiden"/>
       </figure>
 
       <h2>Galleri</h2>
 
-      <h3>Her kan du se billedr af vores fantastiske rum samt vores planter </h3>
+      <h3>Her kan du se billeder af vores fantastiske rum samt vores planter </h3>
 
       <section className="galleryImgsContainer">
         
         <figure>
 
-          <img src={process.env.PUBLIC_URL + "/img/galleri/1.jpg"} />
+          <img src="/img/galleri/1.jpg" alt=" 1 billede i galleriet"/>
 
-          <img src={process.env.PUBLIC_URL + "/img/galleri/2.jpg"} />
+          <img src="/img/galleri/2.jpg" alt=" 2 billede i galleriet"/>
 
-          <img src={process.env.PUBLIC_URL + "/img/galleri/3.jpg"} />
+          <img src="/img/galleri/3.jpg" alt=" 3 billede i galleriet"/>
 
-          <img src={process.env.PUBLIC_URL + "/img/galleri/4.jpg"} />
+          <img src="/img/galleri/4.jpg" alt=" 4 billede i galleriet"/>
 
-          <img src={process.env.PUBLIC_URL + "/img/galleri/5.jpg"} />
+          <img src="/img/galleri/5.jpg" alt=" 5 billede i galleriet"/>
 
-          <img src={process.env.PUBLIC_URL + "/img/galleri/6.jpg"} />
+          <img src="/img/galleri/6.jpg" alt=" 6 billede i galleriet"/>
 
-          <img src={process.env.PUBLIC_URL + "/img/galleri/7.jpg"} />
+          <img src="/img/galleri/7.jpg" alt=" 7 billede i galleriet"/>
 
-          <img src={process.env.PUBLIC_URL + "/img/galleri/8.jpg"} />
+          <img src="/img/galleri/8.jpg" alt=" 8 billede i galleriet"/>
 
-          <img src={process.env.PUBLIC_URL + "/img/galleri/9.jpg"} />
+          <img src="/img/galleri/9.jpg" alt=" 9 billede i galleriet"/>
 
-          <img src={process.env.PUBLIC_URL + "/img/galleri/10.jpg"} />
+          <img src="/img/galleri/10.jpg" alt=" 10 billede i galleriet"/>
 
-          <img src={process.env.PUBLIC_URL + "/img/galleri/11.jpg"} />
+          <img src="/img/galleri/11.jpg" alt=" 11 billede i galleriet"/>
 
-          <img src={process.env.PUBLIC_URL + "/img/galleri/12.jpg"} />
+          <img src="/img/galleri/12.jpg" alt=" 12 billede i galleriet"/>
 
 
 

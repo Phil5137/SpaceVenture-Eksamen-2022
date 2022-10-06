@@ -64,7 +64,7 @@ const Tours = () => {
     <section className="toursContainer">
 
       <figure className="tourBannerImg">
-        <img src={process.env.PUBLIC_URL + "/img/banner-ture.jpg"} />
+        <img src={process.env.PUBLIC_URL + "/img/banner-ture.jpg"} alt="billede af jorden - fra siden ture"/>
       </figure>
 
       <h2>Ture</h2>
@@ -91,7 +91,7 @@ const Tours = () => {
 
 
                 <figure>
-                  <img className="cardImg" src={"http://localhost:4444/images/tours/" + toursData.image1} />
+                  <img className="cardImg" src={"http://localhost:4444/images/tours/" + toursData.image1} alt={"billede af planeten: " + toursData.destination}/>
                 </figure>
 
 

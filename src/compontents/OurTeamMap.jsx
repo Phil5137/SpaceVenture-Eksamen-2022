@@ -10,7 +10,7 @@ const OurTeamMap = ({ ourTeamData }) => {
 
 
 
-             <img className="cardImg" src={"http://localhost:4444/images/team/" + ourTeamData.image} />
+            <img className="cardImg" src={"http://localhost:4444/images/team/" + ourTeamData.image} alt={"billede af vores team medlem: " + ourTeamData.name + ", som har rollen " + ourTeamData.role} />
 
 
             <div className="cardContent">

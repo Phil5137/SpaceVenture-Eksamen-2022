@@ -125,7 +125,7 @@ const Slider = () => {
 
                             bannerData.map((sliderImgs, i) =>
                                 <div className="mySlides slidefade" key={sliderImgs + i}>
-                                    <img src={"http://localhost:4444/images/banner/" + sliderImgs.image} />
+                                    <img src={"http://localhost:4444/images/banner/" + sliderImgs.image} alt={sliderImgs.image} />
 
                                     <div className="sliderTextcontainer">
                                     <h2>{sliderImgs.title}</h2>

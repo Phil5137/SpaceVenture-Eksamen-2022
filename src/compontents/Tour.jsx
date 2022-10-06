@@ -164,13 +164,35 @@ const Tour = () => {
 
               <p>SHARE</p>
 
-              <FaFacebookF className="icons" size={"1.2rem"}/>
+              {/* React-Icons - samt links til de forskellige sociale medier*/}
 
-              <AiOutlineTwitter className="icons" size={"1.2rem"}/>
+              <a href="https://www.facebook.com/" target="_blank">
 
-              <GrGooglePlus className="icons" size={"1.2rem"}/>
+                <FaFacebookF className="icons" />
 
-              <AiOutlineInstagram className="icons" size={"1.2rem"}/>
+
+              </a>
+
+              <a href="https://twitter.com/" target="blank">
+
+                <AiOutlineTwitter className="icons" />
+
+              </a>
+
+
+              <a href="https://www.google.com/search?q=google+plus&rlz=1C1GCEB_enDK988DK988&oq=google+plus&aqs=chrome.0.0i512l5j69i60l3.1886j0j4&sourceid=chrome&ie=UTF-8" target="_blank">
+
+                <GrGooglePlus className="icons" />
+
+              </a>
+
+
+              <a href="https://www.instagram.com/" target="_blank">
+
+                <AiOutlineInstagram className="icons" />
+
+              </a>
+
 
             </figure>
 

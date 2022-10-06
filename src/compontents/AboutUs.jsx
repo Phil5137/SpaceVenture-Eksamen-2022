@@ -69,7 +69,7 @@ const AboutUs = () => {
         <section className="aboutUsContent">
 
             <figure>
-            <img src={process.env.PUBLIC_URL + "/img/om-os.jpg"} />
+            <img src="/img/om-os.jpg" alt="Billede af rummet fra om os sektionen"/>
             </figure>
 
             <div>

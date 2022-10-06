@@ -84,7 +84,7 @@ const SpaceShuttle = () => {
     <section className="spaceShuttleContainer">
 
       <figure className="bannerimg">
-        <img src={process.env.PUBLIC_URL + "/img/banner-spaceship.jpg"} />
+        <img src="/img/banner-spaceship.jpg" alt="Rumfærge top banner billede" />
       </figure>
 
       <h2>Rumfærgen</h2>
@@ -108,7 +108,7 @@ const SpaceShuttle = () => {
         <section className="spaceShuttleContent">
 
           <figure>
-            <img src={"http://localhost:4444/images/spacecraft/" + spaceShuttleData.image} />
+            <img src={"http://localhost:4444/images/spacecraft/" + spaceShuttleData.image} alt="Hvorfor vælge os billede"/>
           </figure>
 
           <div>

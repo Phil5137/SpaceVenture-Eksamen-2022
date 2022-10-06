@@ -79,7 +79,7 @@ const Newssubscription = () => {
                 <>
 
                     <figure>
-                        <img src={process.env.PUBLIC_URL + "/img/newsmail-bg.jpg"} />
+                        <img src="/img/newsmail-bg.jpg" alt="Nyhedsbrev banner billede" />
                     </figure>
 
                     <div className="newsContent">

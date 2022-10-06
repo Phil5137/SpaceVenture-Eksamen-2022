@@ -63,7 +63,10 @@ export const getTourById = (Id) => {
 }; */
 
 
-// POST - OPRET NY
+
+
+
+/* // POST - OPRET NY
 export const createTour = (newTour) => {
     // POST http://localhost:5099/tours/admin , formdata
 
@@ -76,7 +79,7 @@ export const createTour = (newTour) => {
         });
 
     return response;
-};
+}; */
 
 
 // PUT - RET (ud fra id)
@@ -138,7 +141,7 @@ export const getAbout = () => {
 
 
 
-// PUT
+/* // PUT
 export const updateAbout = (aboutData) => {
     // PUT http://localhost:5099/about/admin
 
@@ -151,7 +154,7 @@ export const updateAbout = (aboutData) => {
         });
 
     return response;
-};
+}; */
 
 
 
@@ -266,6 +269,22 @@ export const getAbout = () => {
 };
 
 
+// PUT ABOUT-US
+export const updateAbout = (aboutData) => {
+    // PUT http://localhost:4444/about/admin
+
+    let response = axiosBase.put("about/admin", aboutData)
+        .then((resp) => {
+            return resp.data;
+        })
+        .catch((error) => {
+            throw new Error("Desværre, der er sket en fejl");
+        });
+
+    return response;
+};
+
+
 
 
 // -------------- SPACESHUTTLE ------------
@@ -310,7 +329,7 @@ export const getBanner = () => {
 };
 
 
-// -------------- TURE ------------
+// -------------- TOURS ------------
 
 
 
@@ -329,6 +348,20 @@ export const getTours = () => {
 };
 
 
+// POST - OPRET NY
+export const createTour = (newTour) => {
+    // POST http://localhost:4444/tours/admin , formdata
+
+    let response = axiosBase.post("tours/admin", newTour)
+        .then((resp) => {
+            return resp.data;
+        })
+        .catch((error) => {
+            throw new Error("Desværre, der er sket en fejl");
+        });
+
+    return response;
+};
 
 
 // GET BY ID
@@ -385,3 +418,22 @@ export const sendMail = (sendData) => {
 };
 
 
+
+
+
+
+// -------------- SAFETY ------------
+
+// GET SAFETY
+export const getSafety = () => {
+    // GET http://localhost:4444/safety
+
+    // Her definere vi et endpoint, som i dette tilfælde er "safety"
+
+    let response = axiosBase.get("safety")
+        .then((resp) => { return resp.data; })
+        .catch((error) => { throw new Error("Desværre, der er sket en fejl"); });
+    // Vi thrower en ny Error så den kan blive fanget af vores catch. Hvis vi ikke laver det til en error, tager den det som data som er noget godt, det skal det ikke være når der er fejl.
+
+    return response;
+};

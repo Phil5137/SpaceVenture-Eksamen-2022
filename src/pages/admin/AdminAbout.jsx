@@ -20,7 +20,7 @@ import Fejl from '../../compontents/Fejl';
 
 const AdminAbout = () => {
 
-    const [ aboutContent, setAboutContent ] = useState() // data/tekst mv. der skal rettes
+    const [ aboutData, setAboutData ] = useState() // data/tekst mv. der skal rettes
     const [ loading, setLoading ] = useState( false );
     const [ error, setError ] = useState( false );
 
@@ -40,7 +40,7 @@ const AdminAbout = () => {
 
         getAbout()
             .then( data => {
-                setAboutContent( data ); 
+                setAboutData( data ); 
                 // Laver et kald til api'et hvis det går godt, smider den dataen ind i en state, som i dette tilfælde er setAboutcontent. Som ville få hele componentet til at re-render, hvis den ikke havde en dependencylist ( "[]" )
 
                 // Der er 2 ændringer som kan få et compontent til at re-render, hvis der er en ændring i en state, eller i props.
@@ -48,7 +48,7 @@ const AdminAbout = () => {
             } )
             .catch( ( err ) => {
                 setError( true );
-                setAboutContent();
+                setAboutData();
             }) 
             .finally( () => {
                 setLoading( false )
@@ -81,7 +81,7 @@ const AdminAbout = () => {
   return (
 
     <div className="adminAboutContainer"> 
-        <h1>Ret indhold på Om-siden</h1>
+        <h1>Ret indhold på Lidt om os siden</h1>
 
             {
                 // Hvis api-kaldet loader - den venter på error eller data
@@ -95,12 +95,12 @@ const AdminAbout = () => {
 
             {
                 // Hvis der apidata i vores state
-                aboutContent &&  
+                aboutData &&  
                 
                 <form onSubmit={ handleSubmit }>
 
-                    <label>Titel:  
-                        <input type="text" name="title" defaultValue={ aboutContent.title } placeholder="Titel..."/>
+                    <label>Undertitel:  
+                        <input type="text" name="title" defaultValue={ aboutData.title } placeholder="Titel..."/>
                     </label>
 
                     <label>Indhold: 
@@ -111,7 +111,7 @@ const AdminAbout = () => {
                     <div className="ckeEditor">
                     <CKEditor className="editor"
                         editor={ Editor }
-                        data={ aboutContent.content }
+                        data={ aboutData.content }
 
                         // Vi laver en onChange som siger at når der ændres i teksten, skal den hente data
                         onChange = { ( event, editor ) => {
@@ -130,7 +130,7 @@ const AdminAbout = () => {
                         <label>Vælg evt. et nyt billede: <br /> (overskriver det eksisterende billede) 
                             <input type="file" name="image"/>
                         </label>
-                           <div><img src={"http://localhost:5099/images/about/" + aboutContent.image } alt="Foto" /></div>
+                           <div><img src="/img/om-os.jpg" alt="Foto" /></div>
                  </div>
                     <button type="submit" >Gem rettelse</button>
 

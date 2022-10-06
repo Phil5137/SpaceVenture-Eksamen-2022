@@ -10,6 +10,8 @@ import "../../scss/admin/AdminNavbar.scss"
 const AdminNavbar = () => {
   const { signOut } = useContext(LoginContext);
 
+  const { user } = useContext(LoginContext);
+
   return (
     <nav className="adminNavbar">
       <ul>
@@ -28,6 +30,13 @@ const AdminNavbar = () => {
         <li>
           <NavLink to="/">Forsiden</NavLink>
         </li>
+
+        {
+            user ?
+              <li><NavLink to="/admin" >ADMIN</NavLink></li>
+              :
+              <li><NavLink to="/login" >Login</NavLink></li>
+          }
       </ul>
     </nav>
   );

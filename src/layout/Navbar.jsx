@@ -63,36 +63,52 @@ const Navbar = () => {
 
       <figure className="iconContainer">
 
-        {/* React-Icons */}
+        {/* React-Icons - samt links til de forskellige sociale medier*/}
 
-        <FaFacebookF className="icons" />
+        <a href="https://www.facebook.com/" target="_blank">
 
-        <AiOutlineTwitter className="icons" />
+          <FaFacebookF className="icons" />
 
-        <GrGooglePlus className="icons" />
 
-        <AiOutlineInstagram className="icons" />
+        </a>
+
+        <a href="https://twitter.com/" target="blank">
+
+          <AiOutlineTwitter className="icons" />
+
+        </a>
+
+
+        <a href="https://www.google.com/search?q=google+plus&rlz=1C1GCEB_enDK988DK988&oq=google+plus&aqs=chrome.0.0i512l5j69i60l3.1886j0j4&sourceid=chrome&ie=UTF-8" target="_blank">
+
+          <GrGooglePlus className="icons" />
+
+        </a>
+
+
+        <a href="https://www.instagram.com/" target="_blank">
+
+          <AiOutlineInstagram className="icons" />
+
+        </a>
+
 
       </figure>
+
 
       <div className={showBugerMenu ? "navbarLinks active" : "navbarLinks"} >  {/* Her bruger vi en Turnary Expression */}
 
 
 
-        <ul onClick={() => setShowBugerMenu(!showBugerMenu)}>
-          <li ><NavLink to="/" >Hjem</NavLink> </li>
+        <ul>
+          <li> <NavLink to="/" >Hjem</NavLink> </li>
           <li> <NavLink to="/rumfaergen" >Rumfærgen</NavLink> </li>
           <li> <NavLink to="/ture" >Ture</NavLink> </li>
-          <li><NavLink to="/galleri" >Galleri</NavLink></li>
-          <li><NavLink to="/sikkerhed" >Sikkerhed</NavLink></li>
-          <li><NavLink to="/kontakt" >Kontakt</NavLink></li>
+          <li> <NavLink to="/galleri" >Galleri</NavLink> </li>
+          <li> <NavLink to="/sikkerhed" >Sikkerhed</NavLink> </li>
+          <li> <NavLink to="/kontakt" >Kontakt</NavLink> </li>
 
-          {
-            user ?
-              <li><NavLink to="/admin" >ADMIN</NavLink></li>
-              :
-              <li><NavLink to="/login" >Login</NavLink></li>
-          }
+
 
         </ul>
 

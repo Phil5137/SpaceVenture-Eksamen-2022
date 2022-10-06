@@ -8,7 +8,7 @@ const Header = () => {
     <header>
 
     <figure>
-      <img src={process.env.PUBLIC_URL + "img/logo.png"} />
+      <img src="img/logo.png" alt="spaceventures Logo" />
     </figure>
 
     </header>

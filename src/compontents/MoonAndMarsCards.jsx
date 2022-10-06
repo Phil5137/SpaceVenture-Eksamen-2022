@@ -23,7 +23,7 @@ const MoonAndMarsCards = () => {
 
                         <figure>
 
-                            <img src={process.env.PUBLIC_URL + "/img/moon-btn.jpg"} />
+                            <img src="/img/moon-btn.jpg" alt="Billede af månekortet" />
 
                         </figure>
 
@@ -42,7 +42,7 @@ const MoonAndMarsCards = () => {
 
                         <figure>
 
-                            <img src={process.env.PUBLIC_URL + "/img/mars-btn.jpg"} />
+                            <img src="/img/mars-btn.jpg" alt="Billede af marskortet" />
 
                         </figure>
 
