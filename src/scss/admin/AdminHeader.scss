@@ -1,0 +1,32 @@
+    // HELPERS
+    @import "../../helpers/colors.scss";
+
+
+.adminHeader{
+
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding: 2% 2% 2% 0%;
+    gap: 15px;
+
+    p{
+        font-size: 1.3rem;
+    }
+
+    button{
+        background-color: $darkBlue;
+        border: none;
+        font-size: 1.1rem;
+        padding: 0.5% 1%;
+        color: #fff;
+        border: 1px solid #000;
+
+        &:hover{
+            background-color: transparent;
+            cursor: pointer;
+            color: #000;
+        }
+    }
+
+}

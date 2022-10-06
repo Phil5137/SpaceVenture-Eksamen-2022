@@ -1,0 +1,14 @@
+    // HELPERS
+    @import "../../helpers/colors.scss";
+
+.adminFooter{
+    background-color: $darkBlue;
+    padding: 3% 10%;
+
+    p{
+        color: #fff;
+        line-height: 3% 0%;
+        text-align: center;
+        font-size: 1rem;
+    }
+}

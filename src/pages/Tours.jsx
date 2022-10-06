@@ -28,7 +28,7 @@ const Tours = () => {
 
 
   // State til pagination
-  const [numberPerPage, setNumberPerPage] = useState(1) // Hvor mange vi vil have per side
+  const [numberPerPage, setNumberPerPage] = useState(2) // Hvor mange vi vil have per side
 
   // State til pagination
   const [currentPage, setCurrentPage] = useState(0) // 0 svarer til side 1!!!
@@ -101,8 +101,7 @@ const Tours = () => {
 
                   <div className="cardText"> {parser(toursData.content)} </div>
 
-
-                  <Link to={"/tour/" + toursData._id}>
+                  <Link to={"/ture/tour/" + toursData._id}>
                     <button>Se mere</button>
                   </Link>
 

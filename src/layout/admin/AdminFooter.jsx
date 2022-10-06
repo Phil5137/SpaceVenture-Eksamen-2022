@@ -1,9 +1,13 @@
+// REACT
 import React from 'react'
+
+// SCSS
+import "../../scss/admin/AdminFooter.scss"
 
 const AdminFooter = () => {
   return (
-    <footer>
-      <p>Hej - 2022</p>
+    <footer className="adminFooter">
+      <p>	&#169;  Space ventures - 2022 </p>
     </footer>
   )
 }

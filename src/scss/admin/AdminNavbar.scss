@@ -1,68 +1,212 @@
+// HELPERS
+@import "../../helpers/colors.scss";
+
+
+
 .adminNavbar {
-  padding: 0% 0%;
-  background-color: rgb(129, 129, 129);
-  color: #fff;
-  
-
-  // MENUEN
-
-  ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 2% 0%;
-    font-size: 20px;
-    gap: 50px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 0% 10%;
+    background-color: $darkBlue;
+    color: #fff;
 
 
+    // BURGER-TOGGLE-BUTTON
 
+    .toggleButton {
+        display: none; // Vises med flex i media!!!
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 32px;
+        height: 26px;
+        cursor: pointer;
 
-    li {
-      list-style-type: none;
+        .bar {
+            height: 4px;
+            width: 100%;
+            background-color: rgb(255, 255, 255);
+            border-radius: 10px;
+            transform-origin: left;
 
-      a {
-        text-decoration: none;
-        color: #fff;
+            transition: all 1s ease;
+            
 
-        &:hover {
-          text-decoration: underline;
+            // Lax x ved klik
         }
-      }
+
+        &.changeAnimation .bar1 {
+            transform: rotate(45deg);
+        }
+
+        &.changeAnimation .bar2 {
+            opacity: 0;
+        }
+
+        &.changeAnimation .bar3 {
+            transform: rotate(-45deg);
+        }
 
     }
 
-  }
+    // MENUEN
+
+    .navbarLinks {
+
+        display: flex;
+        align-items: center;
+
+        ul {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            li {
+                list-style-type: none;
+                transition: padding 1s ease;
+                
+                &:hover{
+                    background-color: rgba(148, 148, 148, 0.3);
+                    border-top: 4px solid $lightBlue;
+                }
+            }
+
+            a {
+                display: block;
+                text-decoration: none;
+                color: #fff;
+                padding: 2rem;
+                text-align: center;
+            }
+        }
+
+        
+    .active {
+        background-color: rgba(148, 148, 148, 0.3);
+        border-top: 0px solid $lightBlue;
+    }
+
+
+
+    }
+
+    .iconContainer {
+        display: flex;
+        gap: 20px;
+        font-size: 1.5rem;
+
+        a{
+            color: #fff;
+
+            &:hover{
+                color:$lightBlue;
+                transition: color 0.4s ease;
+            }
+        }
+    }
 
 }
 
+
+// BURGERMENU - RESPONSIVE TABLET
+
 @media (max-width: 800px) {
 
-  .adminNavbar {
-    padding: 2% 0%;
-    background-color: rgb(129, 129, 129);
-    color: #fff;
-    
   
-    // MENUEN
-  
-    ul {
-      flex-direction: column;
-      gap: 35px;
-  
-      li {
-        list-style-type: none;
-  
-        a {
-  
-          &:hover {
-            text-decoration: underline;
-          }
-        }
-  
-      }
-  
-    }
-  
-  }
+    .adminNavbar {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 30px 0%;
+        background-color: #fff;
+        color: #000;
+        box-shadow: 0px 0px 10px rgb(216, 216, 216);
 
+        .active {
+            background-color: transparent;
+            border-top: none;
+            text-decoration: underline;
+            text-underline-offset: 1px;
+        }
+
+        // vis bugermenu
+        .toggleButton {
+            display: flex;
+            align-items: flex-start;
+
+            right: 0;
+            left: 20px;
+
+            .bar {
+                background-color: #000;
+            }
+        }
+
+        // menuen (div rund om ul)
+        .navbarLinks {
+            height: 0;
+            overflow: hidden;
+            transition: height 0.8s ease-out;
+            flex-direction: column;
+            
+
+            &.active {
+                height: 380px;
+
+                /* height: 100vh;
+                position: absolute;
+                top: 57px;
+                bottom: 0;
+                left: 0;
+                background-color: #fff;
+                z-index: 999; */
+            }
+
+            ul {
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+                gap: 40px;
+
+
+                li {
+
+                    a {
+                        padding: 0.5rem 1rem;
+                        color: #000;
+
+                        &:hover{
+                            color:$lightBlue;
+                            transition: all 0.8s ease;
+                            font-size: 1.05rem;
+                        }
+                    }
+
+                    &:hover{
+                        background-color: transparent;
+                        border-top: 0px solid $lightBlue;
+                    }
+                }
+            }
+
+
+            .iconContainer {
+                position: relative;
+            }
+
+            .active {
+                background-color: transparent;
+                border-top: 0px solid $lightBlue;
+            }
+
+        }
+    }
 }

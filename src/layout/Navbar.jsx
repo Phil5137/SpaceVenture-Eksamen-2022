@@ -100,7 +100,7 @@ const Navbar = () => {
 
 
 
-        <ul>
+        <ul onClick={() => setShowBugerMenu(!showBugerMenu)}>
           <li> <NavLink to="/" >Hjem</NavLink> </li>
           <li> <NavLink to="/rumfaergen" >Rumfærgen</NavLink> </li>
           <li> <NavLink to="/ture" >Ture</NavLink> </li>

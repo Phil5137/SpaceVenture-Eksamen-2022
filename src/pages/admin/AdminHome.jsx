@@ -1,11 +1,15 @@
+
+// REACT
 import React from 'react'
 
-
+// SCSS
+import "../../scss/admin/AdminHome.scss"
 
 const AdminHome = () => {
   return (
-    <div>
-    <h1>Velkommen til ADMIN</h1>
+    <div className="adminHomeContainer">
+
+    <h2>Velkommen til ADMIN</h2>
     
     </div>
   )

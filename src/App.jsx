@@ -41,7 +41,7 @@ function App() {
         <Route path="rumfaergen" element={<SpaceShuttle />} />
         <Route path="ture" element={<Tours />} />
 
-        <Route path="tour/:tourId" element={<Tour />} />
+        <Route path="ture/tour/:tourId" element={<Tour />} />
         <Route path="galleri" element={<Gallery />} />
         <Route path="Sikkerhed" element={<Safety />} />
         <Route path="kontakt" element={<Contact />} />

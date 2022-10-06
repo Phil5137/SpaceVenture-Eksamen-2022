@@ -4,10 +4,8 @@ import React, { useState, useEffect } from 'react'
 // SCSS
 import "../scss/SpaceShuttle.scss"
 
-
 // Parser
 import parser from "html-react-parser";
-
 
 // APIKALD
 import { getSpaceShuttle } from '../helpers/api.js';

@@ -81,7 +81,7 @@ const AdminAbout = () => {
   return (
 
     <div className="adminAboutContainer"> 
-        <h1>Ret indhold på Lidt om os siden</h1>
+        <h2>Ret indhold på Lidt om os siden</h2>
 
             {
                 // Hvis api-kaldet loader - den venter på error eller data
@@ -127,7 +127,7 @@ const AdminAbout = () => {
 
                   
                     <div>
-                        <label>Vælg evt. et nyt billede: <br /> (overskriver det eksisterende billede) 
+                        <label>Vælg evt. et nyt billede: (overskriver det eksisterende billede) 
                             <input type="file" name="image"/>
                         </label>
                            <div><img src="/img/om-os.jpg" alt="Foto" /></div>
