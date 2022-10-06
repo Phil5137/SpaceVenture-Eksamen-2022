@@ -28,6 +28,10 @@ const AdminNavbar = () => {
         </li>
 
         <li>
+          <NavLink to="adminaspaceshuttle">Rumfærge (admin)</NavLink>
+        </li>
+
+        <li>
           <NavLink to="/">Forsiden</NavLink>
         </li>
 

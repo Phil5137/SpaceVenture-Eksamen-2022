@@ -4,3 +4,7 @@ Kildeliste:
 
 
 2. Cut off corner SCSS: https://codepen.io/aaahollister/pen/wKwxNY?css-preprocessor=scss
+
+
+
+

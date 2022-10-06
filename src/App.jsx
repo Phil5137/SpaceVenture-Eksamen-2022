@@ -20,6 +20,7 @@ import AdminTours from "./pages/admin/AdminTours";
 import AdminAbout from "./pages/admin/AdminAbout";
 import AdminToursCreate from "./pages/admin/AdminToursCreate";
 import AdminToursEdit from "./pages/admin/AdminToursEdit";
+import AdminSpaceShuttleEdit from "./pages/admin/AdminSpaceShuttleEdit";
 
 
 
@@ -68,6 +69,7 @@ function App() {
         <Route index element={<AdminHome />} />
         <Route path="admintours" element={<AdminTours />} />
         <Route path="adminabout" element={<AdminAbout />} />
+        <Route path="adminaspaceshuttle" element={<AdminSpaceShuttleEdit />} />
         <Route path="admintourscreate" element={<AdminToursCreate />} />
         <Route path="admintoursedit/:tourId" element={<AdminToursEdit />} /> {/* : parametre og er ikke em del af path'et*/}
         <Route path="*" element={<NoMatch />} />

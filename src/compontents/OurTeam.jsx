@@ -69,11 +69,7 @@ const OurTeam = () => {
         // Hvis der er fejl fra api
         error && <Fejl fejlBesked=" Data kan ikke hentes, prøv senere... " />
       }
-
-
-<div>
-  djsandsajdsaj
-</div>
+      
       {
         // Hvis der apidata i vores state
         ourTeamData &&

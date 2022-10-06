@@ -1,9 +1,6 @@
 // React
 import React, { useState, useEffect } from 'react'
 
-// React router dom
-import { NavLink } from 'react-router-dom'
-
 // SCSS
 import "../scss/SpaceShuttle.scss"
 

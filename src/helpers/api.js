@@ -306,7 +306,20 @@ export const getSpaceShuttle = () => {
 };
 
 
+// PUT/RET SPACESHUTTLE
+export const updateSpaceShuttle = (SpaceShuttleData) => {
+    // PUT http://localhost:4444/spacecraft/admin
 
+    let response = axiosBase.put("spacecraft/admin", SpaceShuttleData)
+        .then((resp) => {
+            return resp.data;
+        })
+        .catch((error) => {
+            throw new Error("Desværre, der er sket en fejl");
+        });
+
+    return response;
+};
 
 
 

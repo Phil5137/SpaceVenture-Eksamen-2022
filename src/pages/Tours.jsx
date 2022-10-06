@@ -86,7 +86,7 @@ const Tours = () => {
         <div className="ToursCardsContainer">
 
           {
-            toursData.reverse().slice((currentPage * numberPerPage), (currentPage * numberPerPage) + numberPerPage).map( (toursData, i) =>
+            toursData.slice((currentPage * numberPerPage), (currentPage * numberPerPage) + numberPerPage).map( (toursData, i) =>
               <article className="toursCards" key={ i }>
 
 
