@@ -102,63 +102,76 @@ const AdminTours = () => {
   return (
 
 
-    <div className="adminToursContainer">
+    <section className="adminToursContainer">
 
-      <h1>AdminTours</h1>
+      <h1 className="topBannerText">Push, Put & Delete af tours</h1>
 
-      <Link className="createTourLink" to="/admin/admintourscreate"> <AiOutlinePlus /></Link>
-
-
-      {
-        // Hvis api-kaldet loader - den venter på error eller data
-        loading && <Loading />
-      }
-
-
-      {
-        // Hvis der er fejl fra api
-        error && <Fejl fejlBesked=" Data kan ikke hentes, prøv senere... " />
-      }
-
-      {
-
-        tours &&
-        <div className="cardContainer">
-
-          {
-            tours.map(t =>
-
-              <section className="card" key={t._id}>
+      <figure className="tourBannerImg">
+        <img src={process.env.PUBLIC_URL + "/img/mars1.jpg"} alt="billede af mars - fra turen Mars" />
+      </figure>
 
 
 
-                <h2>{t.destination}</h2>
-
-                <figure>
-                  
-                  <img src={"http://localhost:4444/images/tours/" + t.image1} alt="Nuværende cover-foto" />
-
-                </figure>
-
-                <p>{t.title}</p>
+      <div className="adminToursContentContainer">
 
 
 
-                <div className="iconContainer">
-                  <AiOutlineDelete className="icons" size="2rem" color="red" onClick={() => handleDelete(t._id, t.title)} />
+        <h2>AdminTours</h2>
 
-                  <Link to={"/admin/admintoursedit/" + t._id}> <AiOutlineEdit className="icons" size="2rem" color="green" /></Link>
+        <Link className="createTourLink" to="/admin/admintourscreate"> <AiOutlinePlus /></Link>
 
-                </div>
-              </section>
-            )
-          }
 
-        </div>
+        {
+          // Hvis api-kaldet loader - den venter på error eller data
+          loading && <Loading />
+        }
 
-      }
 
-    </div>
+        {
+          // Hvis der er fejl fra api
+          error && <Fejl fejlBesked=" Data kan ikke hentes, prøv senere... " />
+        }
+
+        {
+
+          tours &&
+          <div className="cardContainer">
+
+            {
+              tours.map(t =>
+
+                <section className="card" key={t._id}>
+
+
+
+                  <h2>{t.destination}</h2>
+
+                  <figure>
+
+                    <img src={"http://localhost:4444/images/tours/" + t.image1} alt="Nuværende cover-foto" />
+
+                  </figure>
+
+                  <p>{t.title}</p>
+
+
+
+                  <div className="iconContainer">
+                    <AiOutlineDelete className="icons" size="2rem" color="red" onClick={() => handleDelete(t._id, t.title)} />
+
+                    <Link to={"/admin/admintoursedit/" + t._id}> <AiOutlineEdit className="icons" size="2rem" color="green" /></Link>
+
+                  </div>
+                </section>
+              )
+            }
+
+          </div>
+
+        }
+
+      </div>
+    </section>
   );
 };
 

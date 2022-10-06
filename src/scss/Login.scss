@@ -31,11 +31,11 @@
       border-radius: 5px;
     }
 
-    button{
+    .loginBtn{
         width: 100%;
         margin: 4% auto;
         padding: 3% 5%;
-        background-color: $lightBlue;
+        background-color: $darkBlue;
         outline: none;
         border: 2px solid black;
         color: #fff;
@@ -50,7 +50,7 @@
 }
 
 
-@media screen and (max-width: 662px) {
+@media screen and (max-width: 800px) {
 
   .loginContainer {
     width: 90%;
@@ -61,11 +61,11 @@
       width: 90%;
    
   
-      button{
+      .loginBtn{
           width: 100%;
           margin: 4% auto;
           padding: 2% 5%;
-          background-color: transparent;
+          background-color: $darkBlue;
           outline: none;
           border: 2px solid black;
           border-radius: 5px;

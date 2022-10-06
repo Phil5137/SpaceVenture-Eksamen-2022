@@ -166,6 +166,8 @@ const AdminToursEdit = () => {
                         />
                     </div>
 
+                    <hr />
+
                     <label>Destination:
                         <input type="text" name="destination" required defaultValue={tour.destination} placeholder="Destination..." />
                     </label>
@@ -181,6 +183,8 @@ const AdminToursEdit = () => {
                     <label>Afstand fra jorden:
                         <input type="text" name="distance" required defaultValue={tour.distance} placeholder="Afstand fra jorden..." />
                     </label>
+
+                    <hr />
 
                     <label >
                         Nuværende billeder:
