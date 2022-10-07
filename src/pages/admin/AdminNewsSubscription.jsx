@@ -108,7 +108,7 @@ const AdminTours = () => {
 
     <section className="adminNewssubscriptionContainer">
 
-      <h1 className="topBannerText">Administration af tilmedlte - Nyhedsbrev</h1>
+      <h2 className="topBannerText">Administration af tilmeldte - Nyhedsbrev</h2>
 
       <figure className="tourBannerImg">
         <img src={process.env.PUBLIC_URL + "/img/newsmail-bg.jpg"} alt="billede af mars - fra turen Mars" />

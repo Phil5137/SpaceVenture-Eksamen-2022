@@ -37,7 +37,7 @@ const AdminTeamMembersCreate = () => {
 
             .then((data) => {
 
-                setMessage("Ny tour er oprettet - med navnet: " + data.oprettet.name)
+                setMessage("Nyt medlem oprettet - med navnet: " + data.oprettet.name)
 
                 setError(false)
 
@@ -97,7 +97,7 @@ const AdminTeamMembersCreate = () => {
                     <input type="email" name="email" required placeholder="E-mail..." />
                 </label>
 
-                <label>Telefonnummer:
+                <label>Telefonnummer: (husk +45)
                     <input type="number" name="phone" required placeholder="Tlf..." />
                 </label>
 

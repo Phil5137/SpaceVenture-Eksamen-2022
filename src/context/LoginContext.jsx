@@ -8,7 +8,7 @@ const LoginContextProvider = (props) => {
 
     // USER state - indeholder data hvis en bruger er logget ind
     // --------------------------------------------------------
-    const [ user, setUser ] = useState("Bente")
+    const [ user, setUser ] = useState()
     
 
     // Login-funktion (matcher brugernavn og password)
