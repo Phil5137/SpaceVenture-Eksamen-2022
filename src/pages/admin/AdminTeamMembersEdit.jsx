@@ -13,12 +13,12 @@ import Loading from '../../compontents/Loading'
 import { getTeamMemberById, updateTeamMember } from '../../helpers/api'
 
 
-const AdminToursEdit = () => {
+const AdminTeamMembersEdit = () => {
 
     // Snup Id (fra url'en) på den tour som skal rettet (er en parameter - se i app.jsx) fordi vi har skrevet :tourId i app.jsx, så er det ikke en del af pathen
     const { teammemberId } = useParams()
 
-    console.log(teammemberId);
+    console.log( teammemberId );
 
     // TJEKLISTE    
     /* 
@@ -73,10 +73,10 @@ const AdminToursEdit = () => {
 
         setLoading(true) // loader loader
 
-        let updateTeamMember = new FormData(e.target);
+        let updatedTeamMember = new FormData(e.target);
 
         // Promise Chain (then, catch og finally)
-        updateTeamMember(updateTeamMember, teammemberId)
+        updateTeamMember(updatedTeamMember, teammemberId)
 
             .then((data) => {
 
@@ -131,19 +131,19 @@ const AdminToursEdit = () => {
                 <form onSubmit={handleSubmit}>
 
                     <label>Navn:
-                        <input type="text" name="name" defaultValue={teamMembers.name} required placeholder="Navn..." />
+                        <input type="text" name="name" defaultValue={teamMembers.name} placeholder="Navn..." />
                     </label>
 
                     <label>Rolle:
-                        <input type="text" name="role" defaultValue={teamMembers.role} required placeholder="Rolle..." />
+                        <input type="text" name="role" defaultValue={teamMembers.role} placeholder="Rolle..." />
                     </label>
 
                     <label>Email:
-                        <input type="email" name="email" defaultValue={teamMembers.email} required placeholder="E-mail..." />
+                        <input type="email" name="email" defaultValue={teamMembers.email} placeholder="E-mail..." />
                     </label>
 
-                    <label>Telefonnummer:
-                        <input type="number" name="phone" defaultValue={teamMembers.phone} required placeholder="Tlf..." />
+                    <label>Telefonnummer (husk +45):
+                        <input type="text" name="phone" defaultValue={teamMembers.phone} placeholder="Tlf..." />
                     </label>
 
                     <label >
@@ -152,7 +152,7 @@ const AdminToursEdit = () => {
                             <img src={"http://localhost:4444/images/team/" + teamMembers.image} alt="Nuværende medlemsfoto" />
 
                             Vælg evt. et nyt billede: (overskriver det eksisterende billede)
-                            <input type="file" name="image" accept="image/x-png,image/jpeg" required />
+                            <input type="file" name="image" accept="image/x-png,image/jpeg"/>
                         </figure>
                     </label>
 
@@ -173,4 +173,4 @@ const AdminToursEdit = () => {
     )
 }
 
-export default AdminToursEdit
+export default AdminTeamMembersEdit

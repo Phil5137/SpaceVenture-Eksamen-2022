@@ -14,10 +14,9 @@
 
     .ourTeamCardsContainer {
 
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 80px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 50px;
         text-align: center;
         height: 100%;
         width: 100%;
@@ -37,13 +36,16 @@
 
             
             .cardImg {
-                width: 50%;
+                min-width: 154px;
+                max-width: 154px;
                 border: 10px solid #fff;
                 border-radius: 100%;
                 object-fit: cover;
                 position: relative;
                 top: 40px;
-                
+                min-height: 154px;
+                max-height: 154px;
+    
             }
             
             .cardName {
@@ -53,7 +55,7 @@
 
             .cardRole {
                 color: $lightBlue;
-                margin: 5px 0px 20px 0px;
+                margin: 20px 0px 20px 0px;
             }
 
             .cardPhone {
@@ -82,30 +84,53 @@
     
         .ourTeamCardsContainer {
     
-            flex-direction: column;
-            gap: 0px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 50px;
+            text-align: center;
+            height: 100%;
+            width: 100%;
+            padding: 0% 10%;
     
             .ourTeamCards {
     
                 width: 100%;
                 
                 .cardContent{           
-                    width: 60%;
-                    margin: 0 auto;
+                    background-color: $lightGrey;
+                    padding: 50px 0px 40px 0px;
+                    width: 100%;
                     
                 }
+    
+    
                 
                 .cardImg {
-                    width: 30%;
+                    min-width: 254px;
+                    max-width: 254px;
                     border: 10px solid #fff;
                     border-radius: 100%;
                     object-fit: cover;
                     position: relative;
                     top: 40px;
+                    min-height: 250px;
+                    max-height: 154px;
                     
                 }
                 
-        
+                .cardName {
+                    margin: 15px 0px 0px 0px;
+                    font-size: 18px
+                }
+    
+                .cardRole {
+                    color: $lightBlue;
+                    margin: 20px 0px 20px 0px;
+                }
+    
+                .cardPhone {
+                    margin: 0px 0px 0px 0px;
+                }
             }
     
         }

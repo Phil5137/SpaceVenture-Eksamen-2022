@@ -356,7 +356,7 @@ export const getTeamMemberById = (Id) => {
         // Den har både brug for den rettede tur, og et id så den ved hvilken tour ændret ud
         // PUT http://localhost:4444/team/admin/617af9a11eed823f30d8a32c , formdata
 
-        let response = axiosBase.put("team/admin" + Id, updatedTeamMember)
+        let response = axiosBase.put("team/admin/" + Id, updatedTeamMember)
             .then((resp) => {
                 return resp.data;
             })
