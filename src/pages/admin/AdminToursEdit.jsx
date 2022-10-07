@@ -43,7 +43,6 @@ const AdminToursEdit = () => {
 
     // state til indhold fra texteditoren (bruges af textarea)
     const [editorTextContent, setEditorTextContent] = useState()
-    const [editorTextRoomType, setEditorTextRoomType] = useState()
 
 
     // Hent tour (ud fra id) som skal rettes
@@ -122,10 +121,6 @@ const AdminToursEdit = () => {
 
         <div className="adminToursEditContainer">
 
-            <h2>Ret Tour</h2>
-
-
-
             {
                 // Hvis Api-kaldet loader - Den venter på error eller data fra api'et
                 loading && <Loading />
@@ -142,6 +137,8 @@ const AdminToursEdit = () => {
             {tour &&
 
                 <form onSubmit={handleSubmit}>
+
+                    <h2>Ret turen: {tour.destination}</h2>
 
 
                     <label>Titel:
@@ -191,12 +188,12 @@ const AdminToursEdit = () => {
                         <figure className="imgContainer">
                             <img src={"http://localhost:4444/images/tours/" + tour.image1} alt="Nuværende cover-foto" />
 
-                            Vælg evt. et nyt billede: (overskriver det eksisterende billede) 
+                            Vælg evt. et nyt billede: (overskriver det eksisterende billede)
                             <input type="file" name="image1" />
 
                             <img src={"http://localhost:4444/images/tours/" + tour.image2} alt="Nuværende cover-foto" />
 
-                            Vælg evt. et nyt billede: (overskriver det eksisterende billede) 
+                            Vælg evt. et nyt billede: (overskriver det eksisterende billede)
                             <input type="file" name="image2" />
                         </figure>
                     </label>

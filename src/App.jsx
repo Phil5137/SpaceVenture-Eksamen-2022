@@ -21,6 +21,10 @@ import AdminAbout from "./pages/admin/AdminAbout";
 import AdminToursCreate from "./pages/admin/AdminToursCreate";
 import AdminToursEdit from "./pages/admin/AdminToursEdit";
 import AdminSpaceShuttleEdit from "./pages/admin/AdminSpaceShuttleEdit";
+import AdminNewsSubscription from "./pages/admin/AdminNewsSubscription";
+import AdminTeamMembers from "./pages/admin/AdminTeamMembers";
+import AdminTeamMembersCreate from "./pages/admin/AdminTeamMembersCreate";
+import AdminTeamMembersEdit from "./pages/admin/AdminTeamMembersEdit";
 
 
 
@@ -68,10 +72,14 @@ function App() {
 
         <Route index element={<AdminHome />} />
         <Route path="admintours" element={<AdminTours />} />
-        <Route path="adminabout" element={<AdminAbout />} />
-        <Route path="adminaspaceshuttle" element={<AdminSpaceShuttleEdit />} />
         <Route path="admintourscreate" element={<AdminToursCreate />} />
         <Route path="admintoursedit/:tourId" element={<AdminToursEdit />} /> {/* : parametre og er ikke em del af path'et*/}
+        <Route path="adminabout" element={<AdminAbout />} />
+        <Route path="adminspaceshuttle" element={<AdminSpaceShuttleEdit />} />
+        <Route path="adminnewssubscription" element={<AdminNewsSubscription />} />
+        <Route path="adminteammembers" element={<AdminTeamMembers />} />
+        <Route path="adminteammemberscreate" element={<AdminTeamMembersCreate />} />
+        <Route path="adminteammembersedit/:teammemberId" element={<AdminTeamMembersEdit />} /> {/* : parametre og er ikke em del af path'et*/}
         <Route path="*" element={<NoMatch />} />
 
       </Route>

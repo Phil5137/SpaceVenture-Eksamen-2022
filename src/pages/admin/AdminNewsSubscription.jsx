@@ -1,30 +1,34 @@
 import React, { useState, useEffect } from "react";
 
 // React-Icons
-import { AiOutlineDelete, AiOutlineEdit, AiOutlinePlus } from 'react-icons/ai';
+import { AiOutlineDelete } from 'react-icons/ai';
+
+import { FiSend } from 'react-icons/fi';
+
+
 
 import { Link } from "react-router-dom";
 
 // APIKALD
-import { getAllTours, deleteTour } from "../../helpers/api";
+import { getNewsSubscription, deleteEmail } from "../../helpers/api";
 
 import Loading from "../../compontents/Loading";
 import Fejl from "../../compontents/Fejl";
 
 // SCSS
-import "../../scss/admin/AdminTours.scss"
+import "../../scss/admin/AdminNewssubscription.scss"
 
 
 
 
 const AdminTours = () => {
 
-  const [tours, setTours] = useState() // data/tekst mv. der skal rettes
+  const [newsSubscriptionData, setNewsSubscriptionData] = useState() // data/tekst mv. der skal rettes
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
 
   // State til håndtering om en tour er blevet slettet - eller om der opstod en fejl
-  const [tourDeleted, setTourDeleted] = useState()
+  const [emailDeleted, setEmailDeleted] = useState()
 
 
 
@@ -32,10 +36,10 @@ const AdminTours = () => {
 
     setLoading(true)
 
-    getAllTours()
+    getNewsSubscription()
 
       .then(data => {
-        setTours(data);
+        setNewsSubscriptionData(data);
         // Laver et kald til api'et hvis det går godt, smider den dataen ind i en state, som i dette tilfælde er setAboutcontent. Som ville få hele componentet til at re-render, hvis den ikke havde en dependencylist ( "[]" )
 
         // Der er 2 ændringer som kan få et compontent til at re-render, hvis der er en ændring i en state, eller i props.
@@ -44,7 +48,7 @@ const AdminTours = () => {
 
       .catch((err) => {
         setError(true);
-        setTours();
+        setNewsSubscriptionData();
       })
 
       .finally(() => {
@@ -53,17 +57,17 @@ const AdminTours = () => {
 
     // [] = En dependencylist når komponentet rerender, spørger den om den skal udfører useeffecten igen eller skal jeg lade vær. Denne dependency list lytter på om der er ændring i staten (setAboutcontent), hvis den ikke havde været der ville den stå og re-render i et uendeligt loop. 
 
-  }, [tourDeleted])  // Lytter på omder bliver slettet en tour = re-render  = nyt api-kald
+  }, [emailDeleted])  // Lytter på omder bliver slettet en tour = re-render  = nyt api-kald
 
   // en tom [] dependencylist betyder at useEffect'en kun kører 1 gang => når compontentet loader første  gang (og IKKE ved re-render)
 
 
 
 
-  const handleDelete = (Id, title) => {
+  const handleDelete = (Id, email) => {
     /* alert(Id) */
 
-    if (window.confirm("Er du sikker på du vil slette touren: '" + title + "' med id: " + Id)) {
+    if (window.confirm("Er du sikker på du vil slette tilmeldingen fra: " + email )) {
 
       // Den spørger om vi er sikre på om vi vil slette. Som består af true ("OK") og false ("Cancel")
 
@@ -73,10 +77,10 @@ const AdminTours = () => {
 
       setLoading(true);
 
-      deleteTour(Id)
+      deleteEmail(Id)
         .then((data) => {
 
-          setTourDeleted([true, Id])
+            setEmailDeleted([true, Id])
 
         })
 
@@ -84,7 +88,7 @@ const AdminTours = () => {
 
           console.log(err);
 
-          setTourDeleted(false)
+          setEmailDeleted(false)
 
         })
 
@@ -102,24 +106,21 @@ const AdminTours = () => {
   return (
 
 
-    <section className="adminToursContainer">
+    <section className="adminNewssubscriptionContainer">
 
-      <h1 className="topBannerText">Opret, ret & slet - tours</h1>
+      <h1 className="topBannerText">Administration af tilmedlte - Nyhedsbrev</h1>
 
       <figure className="tourBannerImg">
-        <img src={process.env.PUBLIC_URL + "/img/mars1.jpg"} alt="billede af mars - fra turen Mars" />
+        <img src={process.env.PUBLIC_URL + "/img/newsmail-bg.jpg"} alt="billede af mars - fra turen Mars" />
       </figure>
 
 
 
-      <div className="adminToursContentContainer">
+      <div className="adminNewssubscriptionContentContainer">
 
 
 
-        <h2>AdminTours</h2>
-
-        <Link className="createTourLink" to="/admin/admintourscreate"> <AiOutlinePlus /></Link>
-
+        <h2>Admin Nyhedsbrev</h2>
 
         {
           // Hvis api-kaldet loader - den venter på error eller data
@@ -134,32 +135,21 @@ const AdminTours = () => {
 
         {
 
-          tours &&
+            newsSubscriptionData &&
           <div className="cardContainer">
 
             {
-              tours.map(t =>
+              newsSubscriptionData.map(n =>
 
-                <section className="card" key={t._id}>
+                <section className="card" key={n._id}>
 
-
-
-                  <h2>{t.destination}</h2>
-
-                  <figure>
-
-                    <img src={"http://localhost:4444/images/tours/" + t.image1} alt="Nuværende cover-foto" />
-
-                  </figure>
-
-                  <p>{t.title}</p>
-
+                  <p>{n.email}</p>
 
 
                   <div className="iconContainer">
-                    <AiOutlineDelete className="icons" size="2rem" color="red" onClick={() => handleDelete(t._id, t.title)} />
+                    <AiOutlineDelete className="icons" size="2rem" color="red" onClick={() => handleDelete(n._id, n.email)} />
 
-                    <Link to={"/admin/admintoursedit/" + t._id}> <AiOutlineEdit className="icons" size="2rem" color="green" /></Link>
+                    <a href={"mailto:" + n.email}> <FiSend className="icons" size="2rem" color="green" /></a>
 
                   </div>
                 </section>

@@ -99,7 +99,7 @@ export const updateTour = (updatedTour, Id) => {
 };
 
 
-// DELETE - SLET (ud fra id)
+/* // DELETE - SLET (ud fra id)
 export const deleteTour = (Id) => {
     // DELETE http://localhost:5099/tours/admin/xxxxxxxxxxxxxxxxxxxxx
 
@@ -113,7 +113,7 @@ export const deleteTour = (Id) => {
 
     return response;
 };
-
+ */
 
 
 
@@ -185,11 +185,27 @@ export const getToursSearch = (searchKey) => {
 
 
 
-// --------------** SpaceVentures **------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+// --------------*********** SPACEVENTURES ***********------------
+
+
 
 
 
 // -------------- FOOTER ------------
+
 
 
 
@@ -206,6 +222,10 @@ export const getFooter = () => {
 
     return response;
 };
+
+
+
+
 
 
 // -------------- NEWSSUBSCRIPTION ------------
@@ -227,11 +247,47 @@ export const subscribeNews = (subscriptionData) => {
 };
 
 
+// GET - Nyhedsbrev
+export const getNewsSubscription = () => {
+    // GET http://localhost:4444/newssubscription/admin (medsend email og name)
+
+    console.log("sub");
+
+    let response = axiosBase.get("newssubscription/admin")
+        .then((resp) => { return resp.data; })
+        .catch((error) => { throw new Error("Desværre, der er sket en fejl"); });
+    // Vi thrower en ny Error så den kan blive fanget af vores catch. Hvis vi ikke laver det til en error, tager den det som data som er noget godt, det skal det ikke være når der er fejl.
+
+    return response;
+};
+
+
+// DELETE - SLET Email (ud fra id)
+export const deleteEmail = (Id) => {
+    // DELETE http://localhost:4444/newssubscription/admin/xxxxxx
+
+    let response = axiosBase.delete("newssubscription/admin/" + Id)
+        .then((resp) => {
+            return resp.data;
+        })
+        .catch((error) => {
+            throw new Error("Desværre, der er sket en fejl");
+        });
+
+    return response;
+};
+
+
+
+
+
+
+
 
 // -------------- OUR TEAM ------------
 
 
-// GET
+// GET - HENT DATA
 export const getOurTeam = () => {
     // GET http://localhost:4444/team
 
@@ -246,6 +302,70 @@ export const getOurTeam = () => {
         });
     return response;
 };
+
+
+// POST - OPRET NY
+export const createTeamMember = (newMember) => {
+    // POST http://localhost:4444/team/admin , formdata
+
+    let response = axiosBase.post("team/admin", newMember)
+        .then((resp) => {
+            return resp.data;
+        })
+        .catch((error) => {
+            throw new Error("Desværre, der er sket en fejl");
+        });
+
+    return response;
+};
+
+// GET BY ID
+export const getTeamMemberById = (Id) => {
+    // GET http://localhost:4444/team/admin/617af9a11eed823f30d8a32c
+
+    // Her definere vi et endpoint med et id, som i dette tilfælde er "tours/id"
+
+    let response = axiosBase.get("team/" + Id)
+        .then((resp) => {
+            return resp.data;
+        })
+        .catch((error) => {
+            throw new Error("Desværre, der er sket en fejl");
+        });
+
+    return response;
+};
+
+    // DELETE - SLET (ud fra id)
+    export const deleteTeamMember = (Id) => {
+        // DELETE http://localhost:4444/team/admin/617af9a11eed823f30d8a32c
+
+        let response = axiosBase.delete("team/admin/" + Id)
+            .then((resp) => {
+                return resp.data;
+            })
+            .catch((error) => {
+                throw new Error("Desværre, der er sket en fejl");
+            });
+
+        return response;
+    };
+
+    // PUT - RET (ud fra id)
+    export const updateTeamMember = (updatedTeamMember, Id) => {
+        // Den har både brug for den rettede tur, og et id så den ved hvilken tour ændret ud
+        // PUT http://localhost:4444/team/admin/617af9a11eed823f30d8a32c , formdata
+
+        let response = axiosBase.put("team/admin" + Id, updatedTeamMember)
+            .then((resp) => {
+                return resp.data;
+            })
+            .catch((error) => {
+                throw new Error("Desværre, der er sket en fejl");
+            });
+
+        return response;
+    };
 
 
 
@@ -287,6 +407,9 @@ export const updateAbout = (aboutData) => {
 
 
 
+
+
+
 // -------------- SPACESHUTTLE ------------
 
 
@@ -323,6 +446,10 @@ export const updateSpaceShuttle = (SpaceShuttleData) => {
 
 
 
+
+
+
+
 // -------------- BANNER ------------
 
 
@@ -340,6 +467,11 @@ export const getBanner = () => {
 
     return response;
 };
+
+
+
+
+
 
 
 // -------------- TOURS ------------
@@ -394,6 +526,27 @@ export const getTourById = (Id) => {
     return response;
 };
 
+// DELETE - SLET (ud fra id)
+export const deleteTour = (Id) => {
+    // DELETE http://localhost:4444/tours/admin/xxxxx
+
+    let response = axiosBase.delete("tours/admin/" + Id)
+        .then((resp) => {
+            return resp.data;
+        })
+        .catch((error) => {
+            throw new Error("Desværre, der er sket en fejl");
+        });
+
+    return response;
+};
+
+
+
+
+
+
+
 
 // -------------- GALLERY ------------
 
@@ -414,6 +567,11 @@ export const getGallery = () => {
 
 
 
+
+
+
+
+
 // -------------- CONTACT ------------
 
 // POST - Send Mail - Kontakt
@@ -429,6 +587,9 @@ export const sendMail = (sendData) => {
 
     return response;
 };
+
+
+
 
 
 
